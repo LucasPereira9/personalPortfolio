@@ -1,5 +1,9 @@
 {
-    "Index": {
-      "titulo": " ola mundo!"
+  "Index": {
+    "Início": "Início",
+    "Sobre": "Sobre",
+    "Cursos": "Cursos",
+    "Experiência Profissional": "Experiência Profissional",
+    "Contato": "Contato"
     }
   }

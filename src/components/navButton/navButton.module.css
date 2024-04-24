@@ -1,0 +1,13 @@
+.title {
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px; 
+    transition: color 0.6s, box-shadow 0.3s, font-size 0.5s; 
+}
+
+.selectedTitle {
+    color: blue;
+    font-size: 25px;
+}

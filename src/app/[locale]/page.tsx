@@ -1,12 +1,10 @@
-import Switcher from '@/components/switcher';
-import {useTranslations} from 'next-intl';
+import styles from './page.module.css'
+import Header from '@/components/header';
  
 export default function Index() {
-  const t = useTranslations('Index');
   return (
-    <div>
-      <h1>{t('titulo')}</h1>
-      <Switcher />
+    <div className={styles.container}>
+      <Header />
     </div>
   )
 }

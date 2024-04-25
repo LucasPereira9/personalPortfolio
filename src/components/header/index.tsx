@@ -10,16 +10,11 @@ export default function Header() {
     const t = useTranslations()
     const [selectedButtonIndex, setSelectedButtonIndex] = React.useState(0);
 
-    const handleButtonClick = (index: number) => {
-        setSelectedButtonIndex(index);
-        console.log(selectedButtonIndex, index)
-    };
-
     const navigationOptions = navOptions.map((item, index) => (
         <div key={index}> 
             <NavButton 
                 title={item.title} 
-                buttonFunction={() => handleButtonClick(index)}
+                buttonFunction={() => setSelectedButtonIndex(index)}
                 selectedButton={index === selectedButtonIndex}
             />
         </div>

@@ -1,28 +1,27 @@
 export const navOptions = [
     {
         title: 'Início',
-        function: '',
-        clicked: true
+        function: '',       
     },
     {
         title: 'Sobre',
         function: '',
-        clicked: false
+       
     },
     {
-        title: 'cursos',
+        title: 'Cursos',
         function: '',
-        clicked: false
+       
     },
     {
         title: 'Experiência Profissional',
         function: '',
-        clicked: false
+       
     },
     {
         title: 'Contato',
         function: '',
-        clicked: false
+       
 
     }
 ]

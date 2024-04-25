@@ -22,11 +22,15 @@ export default function Header() {
 
     return (
         <div className={styles.container}>
-            <h1>
-                {t('Cursos')}
-            </h1>
-            <div  className={styles.navOptionsContent}>
-                {navigationOptions}
+            <h1 />
+            <div className={styles.content}>
+                <div  className={styles.navOptionsContent}>
+                    {navigationOptions}
+                </div>
+                <div className={styles.separator} />
+                <h2>
+                    Redes sociais
+                </h2>
             </div>
         </div>
     )

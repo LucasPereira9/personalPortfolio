@@ -9,7 +9,7 @@ export const navOptions = [
        
     },
     {
-        title: 'Cursos',
+        title: 'Serviços',
         function: '',
        
     },

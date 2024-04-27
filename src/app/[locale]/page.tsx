@@ -16,6 +16,35 @@ export default function Index() {
           <Image width={200} height={200} src={'/assets/images/mjonir.jpg'} alt={'profile'} />
         </div>
       </div>
+      <div className={styles.personal_info_container}>
+        <div>
+            <p className={styles.first_name}>Sobre</p>
+        </div>
+        <div>
+          <Image width={200} height={200} src={'/assets/images/mjonir.jpg'} alt={'profile'} />
+        </div>
+      </div>
+      <div className={styles.personal_info_container}>
+        <div>
+            <p className={styles.first_name}>serviços</p>
+        </div>
+        <div>
+          <Image width={200} height={200} src={'/assets/images/mjonir.jpg'} alt={'profile'} />
+        </div>
+      </div>
+      <div className={styles.personal_info_container}>
+        <div>
+            <p className={styles.first_name}>experiencia profissional</p>
+        </div>
+        <div>
+          <Image width={200} height={200} src={'/assets/images/mjonir.jpg'} alt={'profile'} />
+        </div>
+      </div>
+      <div className={styles.personal_info_container}>
+        <div>
+            <p className={styles.first_name}>contato</p>
+        </div>
+      </div>
     </body>
   )
 }

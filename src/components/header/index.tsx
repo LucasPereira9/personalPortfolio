@@ -8,7 +8,21 @@ import { useTranslations } from "next-intl";
 
 export default function Header() {
     const t = useTranslations()
-    const [selectedButtonIndex, setSelectedButtonIndex] = React.useState(0);
+    const [selectedButtonIndex, setSelectedButtonIndex] = React.useState(0 as number);
+    const [scrolled, setScrolled] = React.useState(false as boolean);
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 0;
+            setScrolled(isScrolled);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     const navigationOptions = navOptions.map((item, index) => (
         <div key={index}> 
@@ -21,10 +35,10 @@ export default function Header() {
     ));
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${scrolled ? styles.container_scrolled : ''}`}>
             <h1 />
             <div className={styles.content}>
-                <div  className={styles.navOptionsContent}>
+                <div  className={styles.navOptions_content}>
                     {navigationOptions}
                 </div>
                 <div className={styles.separator} />

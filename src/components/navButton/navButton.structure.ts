@@ -1,5 +1,8 @@
+import React from "react"
+
 export interface INavButtonProps {
-    title: string
+    title?: string
     buttonFunction: () => void
-    selectedButton: boolean
+    selectedButton?: boolean
+    icon?: React.ReactNode
 }

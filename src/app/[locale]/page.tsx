@@ -6,7 +6,7 @@ export default function Index() {
   return (
     <body>
       <Header />
-      <div className={styles.personal_info_container}>
+      <div style={{height: '60%',}} id='home' className={styles.personal_info_container}>
         <div>
             <p className={styles.first_name}>Lucas</p>
             <p className={styles.second_name}>Almeida</p>
@@ -16,7 +16,7 @@ export default function Index() {
           <Image width={200} height={200} src={'/assets/images/mjonir.jpg'} alt={'profile'} />
         </div>
       </div>
-      <div className={styles.personal_info_container}>
+      <div  style={{height: '60%',}} id='about' className={styles.personal_info_container}>
         <div>
             <p className={styles.first_name}>Sobre</p>
         </div>
@@ -24,7 +24,7 @@ export default function Index() {
           <Image width={200} height={200} src={'/assets/images/mjonir.jpg'} alt={'profile'} />
         </div>
       </div>
-      <div className={styles.personal_info_container}>
+      <div style={{height: '60%',}} id='services' className={styles.personal_info_container}>
         <div>
             <p className={styles.first_name}>serviços</p>
         </div>
@@ -32,7 +32,7 @@ export default function Index() {
           <Image width={200} height={200} src={'/assets/images/mjonir.jpg'} alt={'profile'} />
         </div>
       </div>
-      <div className={styles.personal_info_container}>
+      <div style={{height: '60%',}} id='experience' className={styles.personal_info_container}>
         <div>
             <p className={styles.first_name}>experiencia profissional</p>
         </div>
@@ -40,7 +40,7 @@ export default function Index() {
           <Image width={200} height={200} src={'/assets/images/mjonir.jpg'} alt={'profile'} />
         </div>
       </div>
-      <div className={styles.personal_info_container}>
+      <div style={{height: '60%',}} id='contact' className={styles.personal_info_container}>
         <div>
             <p className={styles.first_name}>contato</p>
         </div>

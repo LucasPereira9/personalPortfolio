@@ -9,9 +9,9 @@
 }
 
 .selectedTitle {
-    color: rgb(0, 174, 255);
+    color: #FFFF00;
     font-size: 23px;
 }
 .title:hover {
-    color: rgb(0, 174, 255);
+    color: #FFFF00;
 }

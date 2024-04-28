@@ -37,3 +37,12 @@
     margin-right: 20px;
     background-color: gray;
 }
+.social_media_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.social_media_icon {
+    height: 3vh;
+    width: 3vh;
+}

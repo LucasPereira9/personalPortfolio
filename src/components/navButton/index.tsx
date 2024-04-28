@@ -9,7 +9,9 @@ export default function NavButton(props: INavButtonProps) {
   const t = useTranslations();
     return (
         <div onClick={props.buttonFunction}>
-            <h2  className={`${styles.title} ${props.selectedButton ? styles.selectedTitle : ''}`}>{t(props.title)}</h2>
+            <h2  className={`${styles.title} ${props.selectedButton ? styles.selectedTitle : ''}`}>
+                { props.icon && props.icon }
+                {t(props.title)}</h2>
         </div>
     );
 }

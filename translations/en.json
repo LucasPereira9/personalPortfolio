@@ -1,7 +1,10 @@
 {
-      "Início": "Home",
+    "index": {
+         "Início": "Home",
       "Sobre": "About",
       "Serviços": "Services",
       "Experiência Profissional": "Professional Experience",
       "Contato": "Contact"
+    }
+     
   }

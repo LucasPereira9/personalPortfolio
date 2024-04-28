@@ -6,12 +6,12 @@ import {useTranslations} from 'next-intl';
 
 export default function NavButton(props: INavButtonProps) {
     
-  const t = useTranslations();
-    return (
+  const t = useTranslations('index');
+   return (
         <div onClick={props.buttonFunction}>
             <h2  className={`${styles.title} ${props.selectedButton ? styles.selectedTitle : ''}`}>
-                { props.icon && props.icon }
-                {t(props.title)}</h2>
+                { props.icon ? props.icon : t(props.title)}
+            </h2>
         </div>
     );
 }

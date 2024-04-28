@@ -1,7 +1,10 @@
-{
+{ 
+  "index": {
     "Início": "Início",
     "Sobre": "Sobre",
     "Serviços": "Serviços",
     "Experiência Profissional": "Experiência Profissional",
     "Contato": "Contato"
+  }
+    
   }

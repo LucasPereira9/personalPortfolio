@@ -3,19 +3,21 @@ import React from "react";
 import NavButton from "../navButton";
 import styles from './header.module.css'
 import { navOptions } from "@/utils";
-import { useTranslations } from "next-intl";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 
 
 export default function Header() {
-    const t = useTranslations()
     const [selectedButtonIndex, setSelectedButtonIndex] = React.useState(0 as number);
     const [scrolled, setScrolled] = React.useState(false as boolean);
 
     const handleScrollToSection = (id: string) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+        if (id === "home") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
         }
     };
 

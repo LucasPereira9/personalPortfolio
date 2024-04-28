@@ -1,32 +1,23 @@
 export const navOptions = [
     {
         id: 'home',
-        title: 'Início',
-        function: '',       
+        title: 'Início'       
     },
     {
         id: 'about',
-        title: 'Sobre',
-        function: '',
-       
+        title: 'Sobre'
     },
     {
         id: 'services',
-        title: 'Serviços',
-        function: '',
-       
+        title: 'Serviços'
     },
     {
         id: 'experience',
-        title: 'Experiência Profissional',
-        function: '',
-       
+        title: 'Experiência Profissional'
     },
     {
         id: 'contact',
-        title: 'Contato',
-        function: '',
-       
+        title: 'Contato'
 
     }
 ]

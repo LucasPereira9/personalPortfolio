@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './page.module.css'
 import Header from '@/components/header';
+import AnimatedContainer from '@/components/animatedContainer';
  
 export default function Index() {
   return (
@@ -10,10 +11,12 @@ export default function Index() {
         <div>
             <p className={styles.first_name}>Lucas</p>
             <p className={styles.second_name}>Almeida</p>
-            <h2>Desenvolvedor Full-Stack Qualificado</h2>
+            <h2>Desenvolvedor Full-Stack</h2>
         </div>
-        <div>
-          <Image width={200} height={200} src={'/assets/images/mjonir.jpg'} alt={'profile'} />
+        <div className={styles.profile_picture}>
+          <AnimatedContainer>
+          <Image style={{borderRadius: '15vh'}} width={430} height={500} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
+          </AnimatedContainer>
         </div>
       </div>
       <div  style={{height: '50vh'}} id='about' className={styles.personal_info_container}>

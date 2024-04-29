@@ -13,9 +13,9 @@ export default function Index() {
             <p className={styles.second_name}>Almeida</p>
             <h2>Desenvolvedor Full-Stack</h2>
         </div>
-        <div>
+        <div className={styles.profile_picture}>
           <AnimatedContainer>
-          <Image width={200} height={200} src={'/assets/images/mjonir.jpg'} alt={'profile'} />
+          <Image style={{borderRadius: '15vh'}} width={430} height={500} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
           </AnimatedContainer>
         </div>
       </div>

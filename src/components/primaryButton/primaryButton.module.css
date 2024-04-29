@@ -1,0 +1,23 @@
+.container {
+    align-items: center;
+    border-radius: 4vh;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    height: 6vh;
+    width: 30vh;
+    background-color: #FFFF00;
+    background-image: linear-gradient(to top, rgba(30, 5, 255, 0.747), #140A48);
+    background-size: 100% 0%;
+    transition: background-size 0.5s ease;
+}
+.title {
+    color: black
+}
+
+.container:hover {
+    background-size: 100% 100%;
+}
+.title:hover {
+    color: white;
+}

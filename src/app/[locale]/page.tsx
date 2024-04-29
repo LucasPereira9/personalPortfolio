@@ -1,9 +1,18 @@
+"use client"
 import Image from 'next/image';
 import styles from './page.module.css'
 import Header from '@/components/header';
 import AnimatedContainer from '@/components/animatedContainer';
+import PrimaryButton from '@/components/primaryButton';
  
 export default function Index() {
+
+  const handleScrollToSection = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+};
   return (
     <div>
       <Header />
@@ -12,6 +21,9 @@ export default function Index() {
             <p className={styles.first_name}>Lucas</p>
             <p className={styles.second_name}>Almeida</p>
             <h2>Desenvolvedor Full-Stack</h2>
+            <div className={styles.button_container}>
+               <PrimaryButton buttonFunction={() => handleScrollToSection('contact')} title='Entrar em Contato' />
+            </div>
         </div>
         <div className={styles.profile_picture}>
           <AnimatedContainer>

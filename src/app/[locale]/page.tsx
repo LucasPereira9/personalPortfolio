@@ -5,10 +5,18 @@ import Header from '@/components/header';
 import AnimatedContainer from '@/components/animatedContainer';
 import PrimaryButton from '@/components/primaryButton';
 import { useTranslations } from 'next-intl';
+import { Skills } from '@/utils';
+import Ability from '@/components/ability';
  
 export default function Index() {
   
   const t = useTranslations('index');
+  
+  const navigationOptions = Skills.map((item, index) => (
+    <AnimatedContainer key={index}> 
+       <Ability icon={item.icon} title={item.title} description={item.description} />
+    </AnimatedContainer>
+));
 
   const handleScrollToSection = (id: string) => {
         const element = document.getElementById(id);
@@ -28,12 +36,13 @@ export default function Index() {
                <PrimaryButton buttonFunction={() => handleScrollToSection('contact')} title={t('Entrar em Contato')} />
             </div>
         </div>
-        <div className={styles.profile_picture}>
           <AnimatedContainer>
-          <Image width={430} height={500} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
+          <Image width={480} height={550} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
           </AnimatedContainer>
-        </div>
       </div>
+        <div className={styles.skills_container}>
+              {navigationOptions}
+        </div>
       <div  style={{height: '50vh'}} id='about' className={styles.personal_info_container}>
         <div>
             <p className={styles.first_name}>Sobre</p>

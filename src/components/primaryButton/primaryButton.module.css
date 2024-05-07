@@ -12,7 +12,8 @@
     transition: background-size 0.5s ease;
 }
 .title {
-    color: black
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container:hover {

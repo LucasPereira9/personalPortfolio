@@ -4,8 +4,11 @@ import styles from './page.module.css'
 import Header from '@/components/header';
 import AnimatedContainer from '@/components/animatedContainer';
 import PrimaryButton from '@/components/primaryButton';
+import { useTranslations } from 'next-intl';
  
 export default function Index() {
+  
+  const t = useTranslations('index');
 
   const handleScrollToSection = (id: string) => {
         const element = document.getElementById(id);
@@ -20,14 +23,14 @@ export default function Index() {
         <div>
             <p className={styles.first_name}>Lucas</p>
             <p className={styles.second_name}>Almeida</p>
-            <h2>Desenvolvedor Full-Stack</h2>
+            <h2>{t('Desenvolvedor Full-Stack')}</h2>
             <div className={styles.button_container}>
-               <PrimaryButton buttonFunction={() => handleScrollToSection('contact')} title='Entrar em Contato' />
+               <PrimaryButton buttonFunction={() => handleScrollToSection('contact')} title={t('Entrar em Contato')} />
             </div>
         </div>
         <div className={styles.profile_picture}>
           <AnimatedContainer>
-          <Image style={{borderRadius: '15vh'}} width={430} height={500} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
+          <Image width={430} height={500} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
           </AnimatedContainer>
         </div>
       </div>

@@ -1,0 +1,23 @@
+.container {
+    background-color: #412da8;
+    border-radius: 2vh;
+    width: 50vh;
+    height: 50vh;
+    margin: 2vh;
+}
+.content {
+    padding: 6vh
+}
+.icon {
+    color: #FFFF00;
+    height: 8vh;
+    width: 8vh;
+}
+.title {
+    color: white;
+    padding-top: 4vh;
+    padding-bottom: 2vh; 
+}
+.description {
+    color: #c4bebe
+}

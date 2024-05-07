@@ -25,14 +25,32 @@ export default function Header() {
         const handleScroll = () => {
             const isScrolled = window.scrollY > 0;
             setScrolled(isScrolled);
+          const isElementInViewport = (el) => {
+            const rect = el.getBoundingClientRect();
+            return (
+              rect.top >= 0 &&
+              rect.left >= 0 &&
+              rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+              rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+          };
+      
+          const sections = ['home', 'about', 'services', 'experience', 'contact'];
+      
+          sections.forEach((id, index) => {
+            const element = document.getElementById(id);
+            if (element && isElementInViewport(element)) {
+              setSelectedButtonIndex(index);
+            }
+          });
         };
-
-        window.addEventListener("scroll", handleScroll);
-
+      
+        window.addEventListener('scroll', handleScroll);
+      
         return () => {
-            window.removeEventListener("scroll", handleScroll);
+          window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+      }, []);
 
     const navigationOptions = navOptions.map((item, index) => (
         <div key={index}> 

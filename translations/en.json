@@ -1,12 +1,17 @@
 {
-    "index": {
-         "Início": "Home",
-      "Sobre": "About",
-      "Serviços": "Services",
-      "Experiência Profissional": "Professional Experience",
-      "Contato": "Contact",
-      "Desenvolvedor Full-Stack": "Full-Stack Developer",
-      "Entrar em Contato": "Get in Touch"
-    }
-     
+  "index": {
+    "Início": "Home",
+    "Sobre": "About",
+    "Serviços": "Services",
+    "Experiência Profissional": "Professional Experience",
+    "Contato": "Contact",
+    "Desenvolvedor Full-Stack": "Full-Stack Developer",
+    "Entrar em Contato": "Contact Us",
+    "Arquitetura de Software": "Software Architecture",
+    "software_description": "Experience in designing scalable and modular software architectures, considering performance, security, and maintenance for robust and scalable systems.",
+    "Criatividade": "Creativity",
+    "Creativity_description": "Ability to think outside the box, find innovative solutions to problems, and express ideas in an original and inspiring way.",
+    "Análise de Dados": "Data Analysis",
+    "Data_Analysis_description": "Ability to collect, process, and analyze data to extract meaningful insights and make data-driven decisions."
   }
+}

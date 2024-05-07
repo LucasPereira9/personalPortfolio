@@ -48,7 +48,6 @@ export default function Index() {
             <p className={styles.first_name}>Sobre</p>
         </div>
         <div>
-          <Image width={200} height={200} src={'/assets/images/mjonir.jpg'} alt={'profile'} />
         </div>
       </div>
       <div style={{height: '50vh'}} id='services' className={styles.personal_info_container}>
@@ -56,7 +55,6 @@ export default function Index() {
             <p className={styles.first_name}>serviços</p>
         </div>
         <div>
-          <Image width={200} height={200} src={'/assets/images/mjonir.jpg'} alt={'profile'} />
         </div>
       </div>
       <div style={{height: '50vh'}} id='experience' className={styles.personal_info_container}>
@@ -64,7 +62,6 @@ export default function Index() {
             <p className={styles.first_name}>experiencia profissional</p>
         </div>
         <div>
-          <Image width={200} height={200} src={'/assets/images/mjonir.jpg'} alt={'profile'} />
         </div>
       </div>
       <div style={{height: '50vh'}} id='contact' className={styles.personal_info_container}>

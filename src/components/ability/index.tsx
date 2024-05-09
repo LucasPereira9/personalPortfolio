@@ -12,7 +12,7 @@ export default function Ability(props: ISkillProps) {
             <div className={styles.content}>
                 <Icon className={styles.icon} />
                 <h2 className={styles.title}>{t(props.title)}</h2>
-                <h2 className={styles.description}>{t(props.description)}</h2>
+                <h3>{t(props.description)}</h3>
             </div>
         </div>
     )

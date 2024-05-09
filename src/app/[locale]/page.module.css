@@ -17,14 +17,14 @@
 }
 .first_name {
     font-size: 6vw;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 400;
     color: white;
     margin-bottom: -5vh;
 }
 .second_name {
     font-size: 6vw;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 400;
     color: #FFFF00;
 }
@@ -36,4 +36,9 @@
     justify-content: center;
     flex-direction: row;
     margin-top: 10vh;
+}
+.about_container {
+    display: flex;
+    justify-content: center;
+    padding-top: 12vh;
 }

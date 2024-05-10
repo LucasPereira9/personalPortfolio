@@ -44,8 +44,11 @@ export default function Index() {
         <div className={styles.skills_container}>
               {AbilitiesOptions}
         </div>
-      <div id='about' className={styles.about_container}>
-       <About />
+      <div className={styles.about_container}>
+        <div className={styles.about_title_content}>
+          <h2 className={styles.about_subtitle}>Um apaixonado por código, sempre buscando soluções inovadoras para desafios complexos.</h2>
+        </div>
+       <About id='about' />
       </div>
       <div style={{height: '50vh'}} id='services' className={styles.personal_info_container}>
         <div>

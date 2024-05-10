@@ -39,3 +39,28 @@ export const Skills = [
         description: 'Data_Analysis_description'
     }
 ]
+
+export const firstComplement = [
+    {
+        title: 'Nome',
+        name: 'Lucas Almeida',
+    },
+    {
+        title: 'Email',
+        name: 'lucas970997@gmail.com',
+    },
+    {
+        title: 'Telefone',
+        name: '+55(31) 99345-4507',
+    }
+]
+export const secondComplement = [
+    {
+        title: 'Endereço',
+        name: 'Vila Cristina, Betim-MG Brasil',
+    },
+    {
+        title: 'Disponível',
+        name: 'Sim',
+    }
+]

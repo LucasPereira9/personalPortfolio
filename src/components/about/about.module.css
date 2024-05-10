@@ -1,34 +1,45 @@
 
-.title_content {
-    align-items: center;
+.content {
     display: flex;
-    text-align: center;
-    flex-direction: column;
-}
-.title {
+    margin-top: 10vh;
+    justify-content: space-around;
+    width: 220vh;
+}.title {
     color: #FFFF00;
     font-size: 32px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-bottom: 4vh;
 }
-.subtitle {
-    font-size: 46px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    max-width: 80vh;
-}
-.content {
-    display: flex;
-    margin-top: 10vh;
-    justify-content: space-between;
-    width: 160vh;
-}
 .about_content {
-    max-width: 110vh;
-    padding-left: 40vh;
+    max-width: 90vh;
+    padding-left: 20vh;
 }
 .about_title {
     color: #FFFF00;
     font-size: 36px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-bottom: 2vh;
+}
+.complement {
+    border-color: #b9b9b9;
+    border-radius: 10px;
+    border-style: solid; 
+    border-width: 1px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5vh;
+}
+.first_complement_content {
+    padding: 3vh;
+    border-color: #b9b9b9;
+    border-style: solid; 
+    border-width: 0px;
+    border-right-width: 1px;
+}
+.complement_item {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+.button_container {
+    margin-top: 5vh;
 }

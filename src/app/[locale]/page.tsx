@@ -8,8 +8,10 @@ import { useTranslations } from 'next-intl';
 import { Skills } from '@/utils';
 import Ability from '@/components/ability';
 import About from '@/components/about';
+import React from 'react';
  
 export default function Index() {
+  const [changingLanguage, setChangingLanguage] = React.useState(true as boolean);
   
   const t = useTranslations('index');
   
@@ -25,9 +27,20 @@ export default function Index() {
             element.scrollIntoView({ behavior: "smooth" });
         }
 };
+
+  React.useEffect(() => {
+    if (changingLanguage) {
+      setTimeout(() => {
+          setChangingLanguage(false)
+        }, 300);
+    }
+  },[changingLanguage])
+
+
   return (
-    <div>
-      <Header />
+    <div className={`${changingLanguage ? styles.changing_language : styles.container}`}>
+      <Header flagFunction={() => setChangingLanguage(true) }
+       />
       <div id='home' className={styles.home_container}>
         <div>
             <p className={styles.first_name}>Lucas</p>

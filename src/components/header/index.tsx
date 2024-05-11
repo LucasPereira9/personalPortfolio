@@ -1,14 +1,42 @@
 "use client"
-import React from "react";
+import React, { useTransition } from "react";
+import { useRouter } from "next/navigation";
 import NavButton from "../navButton";
 import styles from './header.module.css'
-import { navOptions } from "@/utils";
+import { Languages, navOptions } from "@/utils";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import Image from 'next/image';
 
 
 export default function Header() {
     const [selectedButtonIndex, setSelectedButtonIndex] = React.useState(0 as number);
     const [scrolled, setScrolled] = React.useState(false as boolean);
+    const [isPending, startTransition] = useTransition()
+    const router = useRouter()
+
+    
+    const navigationOptions = navOptions.map((item, index) => (
+        <div key={index}> 
+            <NavButton 
+                title={item.title} 
+                buttonFunction={() => {
+                    setSelectedButtonIndex(index)
+                    handleScrollToSection(item.id)
+                }}
+                selectedButton={index === selectedButtonIndex}
+            />
+        </div>
+    ));
+
+    const languages = Languages.map((item, index) => (
+        <div className={styles.language_item} onClick={() => {
+            startTransition(() => {
+                router.replace(`/${item.value}`)
+            })
+        }} key={index}>
+        <Image width={45} height={45} src={item.url} alt={'profile'} />
+        </div>
+    ));
 
     const handleScrollToSection = (id: string) => {
         if (id === "home") {
@@ -52,18 +80,6 @@ export default function Header() {
         };
       }, []);
 
-    const navigationOptions = navOptions.map((item, index) => (
-        <div key={index}> 
-            <NavButton 
-                title={item.title} 
-                buttonFunction={() => {
-                    setSelectedButtonIndex(index)
-                    handleScrollToSection(item.id)
-                }}
-                selectedButton={index === selectedButtonIndex}
-            />
-        </div>
-    ));
 
     return (
         <div className={`${styles.container} ${scrolled ? styles.container_scrolled : ''}`}>
@@ -74,10 +90,13 @@ export default function Header() {
                 </div>
                     <div className={styles.separator} />
                 <div className={styles.social_media_content}>
+                    <div style={{display: 'flex'}}>
                     <NavButton buttonFunction={() => window.open('https://www.linkedin.com/in/lucas-almeida-5280b9206', '_blank')}
                      icon={<AiFillLinkedin className={styles.social_media_icon} />}  />
                     <NavButton buttonFunction={() => window.open('https://github.com/LucasPereira9?tab=repositories', '_blank')}
                      icon={<AiFillGithub className={styles.social_media_icon} />}  />
+                    </div>
+                     {languages}
                 </div>
             </div>
         </div>

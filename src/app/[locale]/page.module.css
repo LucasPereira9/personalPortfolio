@@ -17,14 +17,14 @@
 }
 .first_name {
     font-size: 6vw;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 400;
     color: white;
     margin-bottom: -5vh;
 }
 .second_name {
     font-size: 6vw;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 400;
     color: #FFFF00;
 }
@@ -36,4 +36,21 @@
     justify-content: center;
     flex-direction: row;
     margin-top: 10vh;
+}
+.about_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 14vh;
+}
+.about_title_content {
+    align-items: center;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+.about_subtitle {
+    font-size: 46px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    max-width: 80vh;
 }

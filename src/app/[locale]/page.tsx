@@ -7,12 +7,13 @@ import PrimaryButton from '@/components/primaryButton';
 import { useTranslations } from 'next-intl';
 import { Skills } from '@/utils';
 import Ability from '@/components/ability';
+import About from '@/components/about';
  
 export default function Index() {
   
   const t = useTranslations('index');
   
-  const navigationOptions = Skills.map((item, index) => (
+  const AbilitiesOptions = Skills.map((item, index) => (
     <AnimatedContainer key={index}> 
        <Ability icon={item.icon} title={item.title} description={item.description} />
     </AnimatedContainer>
@@ -41,14 +42,13 @@ export default function Index() {
           </AnimatedContainer>
       </div>
         <div className={styles.skills_container}>
-              {navigationOptions}
+              {AbilitiesOptions}
         </div>
-      <div  style={{height: '50vh'}} id='about' className={styles.personal_info_container}>
-        <div>
-            <p className={styles.first_name}>Sobre</p>
+      <div className={styles.about_container}>
+        <div className={styles.about_title_content}>
+          <h2 className={styles.about_subtitle}>{t('Um apaixonado por código')}</h2>
         </div>
-        <div>
-        </div>
+       <About id='about' />
       </div>
       <div style={{height: '50vh'}} id='services' className={styles.personal_info_container}>
         <div>

@@ -9,7 +9,7 @@
     background-color: #FFFF00;
     background-image: linear-gradient(to top, rgba(30, 5, 255, 0.747), #140A48);
     background-size: 100% 0%;
-    transition: background-size 0.5s ease;
+    transition: background-size 0.8s ease;
 }
 .title {
     color: black;

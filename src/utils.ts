@@ -58,9 +58,5 @@ export const secondComplement = [
     {
         title: 'Endereço',
         name: 'Vila Cristina, Betim-MG Brasil',
-    },
-    {
-        title: 'Disponível',
-        name: 'Sim',
     }
 ]

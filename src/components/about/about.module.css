@@ -12,7 +12,7 @@
 }
 .about_content {
     padding-left: 10vh;
-    max-width: 80vh;
+    max-width: 70vh;
 }
 .about_title {
     color: #FFFF00;
@@ -30,15 +30,15 @@
     margin-top: 5vh;
 }
 .first_complement_content {
-    padding: 3vh;
+    padding: 2vh;
     border-color: #b9b9b9;
     border-style: solid; 
     border-width: 0px;
     border-right-width: 1px;
 }
 .complement_item {
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    margin-top: 1.5vh;
+    margin-bottom: 1.5vh;
 }
 .button_container {
     margin-top: 5vh;

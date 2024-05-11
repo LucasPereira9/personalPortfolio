@@ -40,7 +40,6 @@ export default function Header() {
           sections.forEach((id, index) => {
             const element = document.getElementById(id);
             if (element && isElementInViewport(element)) {
-                console.log('index: ', index)
               setSelectedButtonIndex(index);
             }
           });

@@ -13,7 +13,7 @@ export default function LocaleLayout({
   return (
    
       <html lang={locale}>
-      <body style={{backgroundImage: 'url("/assets/images/background.jpg")'}}>
+      <body style={{backgroundImage: 'url("/assets/images/background.png")'}}>
         <NextIntlClientProvider  locale={locale} messages={messages}>
             {children}
         </NextIntlClientProvider>

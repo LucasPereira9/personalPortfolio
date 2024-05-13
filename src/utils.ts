@@ -35,7 +35,7 @@ export const Languages = [
     },
     {
         url: '/assets/images/spain.png',
-        value: 'pt',
+        value: 'es',
     }
 ]
 export const Skills = [

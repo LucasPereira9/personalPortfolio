@@ -1,0 +1,27 @@
+{
+    "index": {
+      "Início": "Inicio",
+      "Sobre": "Acerca de",
+      "Serviços": "Servicios",
+      "Experiência Profissional": "Experiencia Profesional",
+      "Contato": "Contacto",
+      "Desenvolvedor Full-Stack": "Desarrollador Full-Stack",
+      "Entrar em Contato": "Contáctenos",
+      "Arquitetura de Software": "Arquitectura de Software",
+      "software_description": "Experiencia en diseñar arquitecturas de software escalables y modulares, considerando rendimiento, seguridad y mantenimiento para sistemas robustos y escalables.",
+      "Criatividade": "Creatividad",
+      "Creativity_description": "Habilidad de pensar fuera de la caja, encontrar soluciones innovadoras a problemas y expresar ideas de forma original e inspiradora.",
+      "Análise de Dados": "Análisis de Datos",
+      "Data_Analysis_description": "Habilidad para recolectar, procesar y analizar datos para extraer ideas significativas y tomar decisiones basadas en datos.",
+      "Um apaixonado por código": "Apasionado por el código, siempre buscando soluciones innovadoras para desafíos complejos.",
+      "Anos de Experiência": "Años de Experiencia",
+      "Sobre Mim": "Sobre mí",
+      "Como desenvolvedor, equilibro": "Como desarrollador, equilibro mi vida con mi papel de padre dedicado, entusiasta de los juegos y amante del deporte. Mi familia es mi apoyo y mi fuente de amor, mientras que la programación se ha convertido en más que una profesión, es mi vocación. Constantemente busco integrar mis intereses con mi carrera, buscando crecimiento personal y profesional. Mi objetivo diario es superarme, impulsado por un viaje de autodescubrimiento y mejora constante, que me motiva profundamente.",
+      "Nome": "Nombre",
+      "Email": "Correo electrónico",
+      "Telefone": "Teléfono",
+      "Endereço": "Dirección",
+      "Disponível": "Disponible",
+      "Carregar CV": "Descargar CV"
+    }
+  }

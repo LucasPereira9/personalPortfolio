@@ -5,17 +5,18 @@ import Header from '@/components/header';
 import AnimatedContainer from '@/components/animatedContainer';
 import PrimaryButton from '@/components/primaryButton';
 import { useTranslations } from 'next-intl';
-import { Skills } from '@/utils';
+import { Abilities } from '@/utils';
 import Ability from '@/components/ability';
 import About from '@/components/about';
 import React from 'react';
+import Skill from '@/components/skill';
  
 export default function Index() {
   const [changingLanguage, setChangingLanguage] = React.useState(true as boolean);
   
   const t = useTranslations('index');
   
-  const AbilitiesOptions = Skills.map((item, index) => (
+  const AbilitiesOptions = Abilities.map((item, index) => (
     <AnimatedContainer key={index}> 
        <Ability icon={item.icon} title={item.title} description={item.description} />
     </AnimatedContainer>
@@ -67,7 +68,8 @@ export default function Index() {
             <h1 className={styles.skill_title}>HABILIDADES</h1>
             <h3 className={styles.skill_subtitle}>Eu trabalho duro para melhorar minhas habilidades regularmente</h3>
             <div>
-              <h3>skills</h3>
+              <Skill title="HTML" level={90} />
+              <Skill title="CSS" level={80} />
             </div>
       </div>
       <div style={{height: '50vh'}} id='services' className={styles.personal_info_container}>

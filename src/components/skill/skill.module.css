@@ -1,0 +1,25 @@
+.skill {
+    margin-bottom: 20px;
+  }
+  
+  .skill h3 {
+    margin-bottom: 5px;
+  }
+  .percentage {
+    left: 0;
+  }
+  .percentage_number {
+    color: #FFFF00;
+  }
+  .skill_bar {
+    background-color: #7e7e7e;
+    height: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 60vh;
+  }
+  .skill_level {
+    height: 100%;
+    background-color: #FFFF00;
+    border-radius: 10px;
+  }

@@ -1,14 +1,44 @@
 "use client"
-import React from "react";
+import React, { useTransition } from "react";
+import { useRouter } from "next/navigation";
 import NavButton from "../navButton";
 import styles from './header.module.css'
-import { navOptions } from "@/utils";
+import { Languages, navOptions } from "@/utils";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import Image from 'next/image';
+import { IHeaderProps } from "./header.structure";
 
 
-export default function Header() {
+export default function Header(props: IHeaderProps) {
     const [selectedButtonIndex, setSelectedButtonIndex] = React.useState(0 as number);
     const [scrolled, setScrolled] = React.useState(false as boolean);
+    const [isPending, startTransition] = useTransition()
+    const router = useRouter()
+
+    
+    const navigationOptions = navOptions.map((item, index) => (
+        <div key={index}> 
+            <NavButton 
+                title={item.title} 
+                buttonFunction={() => {
+                    setSelectedButtonIndex(index)
+                    handleScrollToSection(item.id)
+                }}
+                selectedButton={index === selectedButtonIndex}
+            />
+        </div>
+    ));
+
+    const languages = Languages.map((item, index) => (
+        <div className={styles.language_item} onClick={() => {
+            props.flagFunction()
+            startTransition(() => {
+                router.replace(`/${item.value}`)
+            })
+        }} key={index}>
+        <Image width={40} height={40} src={item.url} alt={'profile'} />
+        </div>
+    ));
 
     const handleScrollToSection = (id: string) => {
         if (id === "home") {
@@ -52,18 +82,6 @@ export default function Header() {
         };
       }, []);
 
-    const navigationOptions = navOptions.map((item, index) => (
-        <div key={index}> 
-            <NavButton 
-                title={item.title} 
-                buttonFunction={() => {
-                    setSelectedButtonIndex(index)
-                    handleScrollToSection(item.id)
-                }}
-                selectedButton={index === selectedButtonIndex}
-            />
-        </div>
-    ));
 
     return (
         <div className={`${styles.container} ${scrolled ? styles.container_scrolled : ''}`}>
@@ -74,10 +92,14 @@ export default function Header() {
                 </div>
                     <div className={styles.separator} />
                 <div className={styles.social_media_content}>
-                    <NavButton buttonFunction={() => window.open('https://www.linkedin.com/in/lucas-almeida-5280b9206', '_blank')}
-                     icon={<AiFillLinkedin className={styles.social_media_icon} />}  />
-                    <NavButton buttonFunction={() => window.open('https://github.com/LucasPereira9?tab=repositories', '_blank')}
-                     icon={<AiFillGithub className={styles.social_media_icon} />}  />
+                    <div style={{display: 'flex'}}>
+                        <NavButton buttonFunction={() => window.open('https://www.linkedin.com/in/lucas-almeida-5280b9206', '_blank')}
+                        icon={<AiFillLinkedin className={styles.social_media_icon} />}  />
+                        <NavButton buttonFunction={() => window.open('https://github.com/LucasPereira9?tab=repositories', '_blank')}
+                        icon={<AiFillGithub className={styles.social_media_icon} />}  />
+                    </div>
+                    <div className={styles.separator} />
+                        {languages}
                 </div>
             </div>
         </div>

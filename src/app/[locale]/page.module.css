@@ -1,3 +1,11 @@
+.container {
+    transition: opacity 2s ease;
+}
+
+.changing_language {
+    opacity: 0;
+}
+
 .personal_info_container {
     align-items: center;
     display: flex;

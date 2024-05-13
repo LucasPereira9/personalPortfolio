@@ -1,4 +1,6 @@
 import {AiOutlineGateway, AiOutlineHighlight, AiOutlineLineChart } from 'react-icons/ai';
+
+
 export const navOptions = [
     {
         id: 'home',
@@ -20,6 +22,20 @@ export const navOptions = [
         id: 'contact',
         title: 'Contato'
 
+    }
+]
+export const Languages = [
+    {
+        url: '/assets/images/united_state.png',
+        value: 'en',
+    },
+    {
+        url: '/assets/images/brazil.png',
+        value: 'pt',
+    },
+    {
+        url: '/assets/images/spain.png',
+        value: 'es',
     }
 ]
 export const Skills = [

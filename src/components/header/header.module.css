@@ -38,11 +38,21 @@
     background-color: gray;
 }
 .social_media_content {
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 38vh;
 }
 .social_media_icon {
     height: 3vh;
     width: 3vh;
+}
+.language_item {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.language_item:hover {
+    transform: scale(1.2);
 }

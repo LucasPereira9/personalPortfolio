@@ -39,7 +39,7 @@
 .button_container {
     margin-top: 4vh;
 }
-.skills_container {
+.habilities_container {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -58,6 +58,25 @@
     flex-direction: column;
 }
 .about_subtitle {
+    font-size: 46px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    max-width: 80vh;
+}
+
+.skills_container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15vh;
+}
+.skill_title {
+    color: #FFFF00;
+    font-size: 30px;
+    margin-bottom: 3vh;
+    font-weight: 400;
+}
+.skill_subtitle {
     font-size: 46px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     max-width: 80vh;

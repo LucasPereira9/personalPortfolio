@@ -54,7 +54,7 @@ export default function Index() {
           <Image width={480} height={550} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
           </AnimatedContainer>
       </div>
-        <div className={styles.skills_container}>
+        <div className={styles.habilities_container}>
               {AbilitiesOptions}
         </div>
       <div className={styles.about_container}>
@@ -62,6 +62,13 @@ export default function Index() {
           <h2 className={styles.about_subtitle}>{t('Um apaixonado por código')}</h2>
         </div>
        <About id='about' />
+      </div>
+      <div className={styles.skills_container}>
+            <h1 className={styles.skill_title}>HABILIDADES</h1>
+            <h3 className={styles.skill_subtitle}>Eu trabalho duro para melhorar minhas habilidades regularmente</h3>
+            <div>
+              <h3>skills</h3>
+            </div>
       </div>
       <div style={{height: '50vh'}} id='services' className={styles.personal_info_container}>
         <div>

@@ -4,13 +4,32 @@ import Ability from "../ability";
 import AnimatedContainer from "../animatedContainer";
 import { ServicesOptions } from "@/utils";
 import PrimaryButton from "../primaryButton";
+import AnimatedIcon from "../iconAnimated";
+import React from "react";
 
 
 export default function Services(props: IServicesProps) {
 
+    const [hoveredItems, setHoveredItems] = React.useState(Array(ServicesOptions.length).fill(false));
+
+    const handleMouseEnter = (index) => {
+      const updatedHoveredItems = [...hoveredItems];
+      updatedHoveredItems[index] = true;
+      setHoveredItems(updatedHoveredItems);
+    };
+  
+    const handleMouseLeave = (index) => {
+      const updatedHoveredItems = [...hoveredItems];
+      updatedHoveredItems[index] = false;
+      setHoveredItems(updatedHoveredItems);
+    };
+
     const ServicesList = ServicesOptions.map((item, index) => (
-        <AnimatedContainer key={index}> 
-           <Ability serviceIcon={<PrimaryButton />} isServices icon={item.icon} title={item.title} description={item.description} />
+        <AnimatedContainer 
+        key={index}
+        onMouseEnter={() => handleMouseEnter(index)}
+        onMouseLeave={() => handleMouseLeave(index)}> 
+           <Ability serviceIcon={<AnimatedIcon isHovered={hoveredItems[index]} />} isServices icon={item.icon} title={item.title} description={item.description} />
         </AnimatedContainer>
     ));
     return (

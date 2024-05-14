@@ -1,0 +1,30 @@
+.white_ball_container {
+    position: relative;
+    width: 100px; /* Ajuste conforme necessário */
+    height: 100px; /* Ajuste conforme necessário */
+  }
+  
+  .white_ball {
+    width: 50px; /* Diâmetro da bola branca */
+    height: 50px; /* Diâmetro da bola branca */
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .icon {
+    position: absolute;
+    z-index: 100;
+    top: 50%; /* Posicionamento verticalmente no meio do contêiner */
+    left: 50%; /* Posicionamento horizontalmente no meio do contêiner */
+    transform: translate(-50%, -50%); /* Centraliza o ícone dentro do contêiner */
+    transition: all 0.3s ease; /* Transição suave */
+  }
+  
+  .icon.centered {
+    top: 50%; /* Mantém o ícone centralizado verticalmente */
+    left: 50%; /* Mantém o ícone centralizado horizontalmente */
+    transform: translate(-50%, -50%) scale(0); /* Reduz o tamanho do ícone para 0 e centraliza dentro da bola branca */
+  }

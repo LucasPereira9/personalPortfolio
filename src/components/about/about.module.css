@@ -87,3 +87,21 @@
     font-size: 28px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+.skills_container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20vh;
+}
+.skill_title {
+    color: #FFFF00;
+    font-size: 26px;
+    margin-bottom: 3vh;
+    font-weight: 400;
+}
+.skill_subtitle {
+    font-size: 46px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    max-width: 80vh;
+}

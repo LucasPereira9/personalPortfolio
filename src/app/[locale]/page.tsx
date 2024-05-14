@@ -5,20 +5,26 @@ import Header from '@/components/header';
 import AnimatedContainer from '@/components/animatedContainer';
 import PrimaryButton from '@/components/primaryButton';
 import { useTranslations } from 'next-intl';
-import { Skills } from '@/utils';
+import { Abilities, Skills } from '@/utils';
 import Ability from '@/components/ability';
 import About from '@/components/about';
 import React from 'react';
+import Skill from '@/components/skill';
  
 export default function Index() {
   const [changingLanguage, setChangingLanguage] = React.useState(true as boolean);
   
   const t = useTranslations('index');
   
-  const AbilitiesOptions = Skills.map((item, index) => (
+  const AbilitiesOptions = Abilities.map((item, index) => (
     <AnimatedContainer key={index}> 
        <Ability icon={item.icon} title={item.title} description={item.description} />
     </AnimatedContainer>
+));
+const SkillsOptions = Skills.map((item, index) => (
+    <div key={index}> 
+      <Skill title={item.title} level={item.level} />
+    </div>
 ));
 
   const handleScrollToSection = (id: string) => {
@@ -54,7 +60,7 @@ export default function Index() {
           <Image width={480} height={550} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
           </AnimatedContainer>
       </div>
-        <div className={styles.skills_container}>
+        <div className={styles.habilities_container}>
               {AbilitiesOptions}
         </div>
       <div className={styles.about_container}>
@@ -62,6 +68,13 @@ export default function Index() {
           <h2 className={styles.about_subtitle}>{t('Um apaixonado por código')}</h2>
         </div>
        <About id='about' />
+      </div>
+      <div className={styles.skills_container}>
+            <h1 className={styles.skill_title}>HABILIDADES</h1>
+            <h3 className={styles.skill_subtitle}>Eu trabalho duro para melhorar minhas habilidades regularmente</h3>
+            <div className={styles.skills_content}>
+                {SkillsOptions}
+            </div>
       </div>
       <div style={{height: '50vh'}} id='services' className={styles.personal_info_container}>
         <div>

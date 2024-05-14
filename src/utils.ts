@@ -38,7 +38,7 @@ export const Languages = [
         value: 'es',
     }
 ]
-export const Skills = [
+export const Abilities = [
     {
         icon: AiOutlineGateway,
         title: 'Arquitetura de Software',
@@ -74,5 +74,40 @@ export const secondComplement = [
     {
         title: 'Endereço',
         name: 'Vila Cristina, Betim-MG Brasil',
+    }
+]
+
+export const Skills = [
+    {
+        title: 'React.js',
+        level: 97
+    },
+    {
+        title: 'React Native',
+        level: 97
+    },
+    {
+        title: 'Next.js',
+        level: 90
+    },
+    {
+        title: 'Typescript',
+        level: 90
+    },
+    {
+        title: 'Node.js',
+        level: 80
+    },
+    {
+        title: 'Firebase',
+        level: 88
+    },
+    {
+        title: 'REST API',
+        level: 90
+    },
+    {
+        title: 'MySQL',
+        level: 85
     }
 ]

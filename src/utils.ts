@@ -1,4 +1,5 @@
-import {AiOutlineGateway, AiOutlineHighlight, AiOutlineLineChart } from 'react-icons/ai';
+import {AiFillTool, AiOutlineApi, AiOutlineAppstore, AiOutlineDesktop, AiOutlineGateway, AiOutlineHighlight, AiOutlineLineChart, AiOutlineMobile } from 'react-icons/ai';
+import { FaAppStore } from 'react-icons/fa';
 
 
 export const navOptions = [
@@ -114,26 +115,32 @@ export const Skills = [
 export const ServicesOptions = [
     {
         title: 'Design Responsivo para Web',
-        description: 'Desenvolvimento de interfaces web adaptáveis, que proporcionam uma experiência visualmente atraente e funcional em diferentes dispositivos e tamanhos de tela.'
+        description: 'Desenvolvimento de interfaces web adaptáveis, que proporcionam uma experiência visualmente atraente e funcional em diferentes dispositivos e tamanhos de tela.',
+        icon: AiOutlineDesktop
     },
     {
         title: 'Experiência Mobile',
-        description: 'Criação de interfaces móveis intuitivas e eficientes, projetadas para oferecer uma experiência de usuário fluida e envolvente em smartphones e tablets.'
+        description: 'Criação de interfaces móveis intuitivas e eficientes, projetadas para oferecer uma experiência de usuário fluida e envolvente em smartphones e tablets.',
+        icon: AiOutlineMobile
     },
     {
         title: 'Implementação de RESTful APIs',
-        description: 'Desenvolvimento de APIs RESTful robustas e escaláveis, permitindo a integração simplificada de sistemas e o compartilhamento eficiente de dados entre plataformas.'
+        description: 'Desenvolvimento de APIs RESTful robustas e escaláveis, permitindo a integração simplificada de sistemas e o compartilhamento eficiente de dados entre plataformas.',
+        icon: AiOutlineApi
     },
     {
         title: 'Componentes Web Modularizados',
-        description: 'Construção de componentes web modulares e flexíveis, promovendo a reutilização de código e a consistência visual em todo o projeto.'
+        description: 'Construção de componentes web modulares e flexíveis, promovendo a reutilização de código e a consistência visual em todo o projeto.',
+        icon: AiOutlineAppstore
     },
     {
         title: 'Publicação de Aplicativos Mobile',
-        description: 'Assistência completa no processo de publicação de aplicativos nas principais lojas virtuais, garantindo que seu aplicativo alcance o público-alvo desejado.'
+        description: 'Assistência completa no processo de publicação de aplicativos nas principais lojas virtuais, garantindo que seu aplicativo alcance o público-alvo desejado.',
+        icon: FaAppStore
     },
     {
         title: 'Serviços Personalizados sob Medida',
-        description: 'Adaptação de serviços para atender às necessidades específicas de cada cliente, proporcionando soluções exclusivas e de alta qualidade.'
+        description: 'Adaptação de serviços para atender às necessidades específicas de cada cliente, proporcionando soluções exclusivas e de alta qualidade.',
+        icon: AiFillTool
     },
 ]

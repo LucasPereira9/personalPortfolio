@@ -80,14 +80,14 @@ const SkillsOptions = Skills.map((item, index) => (
       <div className={styles.personal_info_container}>
         <Services id='services' />
       </div>
-      <div style={{height: '50vh'}} id='experience' className={styles.personal_info_container}>
+      <div style={{marginTop: '100vh'}} id='experience' className={styles.personal_info_container}>
         <div>
             <p className={styles.first_name}>experiencia profissional</p>
         </div>
         <div>
         </div>
       </div>
-      <div style={{height: '50vh'}} id='contact' className={styles.personal_info_container}>
+      <div style={{height: '100vh'}} id='contact' className={styles.personal_info_container}>
         <div>
             <p className={styles.first_name}>contato</p>
         </div>

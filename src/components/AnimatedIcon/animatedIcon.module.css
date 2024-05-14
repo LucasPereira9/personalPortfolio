@@ -1,0 +1,33 @@
+.ball_container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .ball {
+    border-radius: 50%;
+    background-color: #140A48;
+    height: 80px;
+    transition: background-color 0.8s ease;
+    width: 80px;
+  }
+  .ball_hovered {
+    background-color: #FFFF00;
+  }
+  .icon {
+    color: #FFFF00;
+    position: relative;
+    right: 4vh;
+    bottom: 2vh;
+    height: 9vh;
+    width: 9vh;
+    transition: color 0.5s ease, right 0.5s ease, bottom 0.5s ease, height 0.5s ease, width 0.5s ease;
+  }
+  
+  .icon.icon_transition {
+    color: black;
+    position: relative;
+    right: 0;
+    bottom: -1vh;
+    height: 7vh;
+    width: 7vh;
+  }

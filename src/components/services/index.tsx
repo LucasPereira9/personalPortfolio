@@ -3,8 +3,7 @@ import styles from './services.module.css'
 import Ability from "../ability";
 import AnimatedContainer from "../animatedContainer";
 import { ServicesOptions } from "@/utils";
-import PrimaryButton from "../primaryButton";
-import AnimatedIcon from "../iconAnimated";
+import AnimatedIcon from "../AnimatedIcon";
 import React from "react";
 
 
@@ -12,13 +11,13 @@ export default function Services(props: IServicesProps) {
 
     const [hoveredItems, setHoveredItems] = React.useState(Array(ServicesOptions.length).fill(false));
 
-    const handleMouseEnter = (index) => {
+    const handleMouseEnter = (index: number) => {
       const updatedHoveredItems = [...hoveredItems];
       updatedHoveredItems[index] = true;
       setHoveredItems(updatedHoveredItems);
     };
   
-    const handleMouseLeave = (index) => {
+    const handleMouseLeave = (index: number) => {
       const updatedHoveredItems = [...hoveredItems];
       updatedHoveredItems[index] = false;
       setHoveredItems(updatedHoveredItems);
@@ -29,7 +28,7 @@ export default function Services(props: IServicesProps) {
         key={index}
         onMouseEnter={() => handleMouseEnter(index)}
         onMouseLeave={() => handleMouseLeave(index)}> 
-           <Ability serviceIcon={<AnimatedIcon isHovered={hoveredItems[index]} />} isServices icon={item.icon} title={item.title} description={item.description} />
+           <Ability serviceIcon={<AnimatedIcon icon={item.icon} isHovered={hoveredItems[index]} />} isServices icon={item.icon} title={item.title} description={item.description} />
         </AnimatedContainer>
     ));
     return (

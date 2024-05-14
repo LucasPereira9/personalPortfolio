@@ -111,3 +111,29 @@ export const Skills = [
         level: 85
     }
 ]
+export const ServicesOptions = [
+    {
+        title: 'Design Responsivo para Web',
+        description: 'Desenvolvimento de interfaces web adaptáveis, que proporcionam uma experiência visualmente atraente e funcional em diferentes dispositivos e tamanhos de tela.'
+    },
+    {
+        title: 'Experiência Mobile',
+        description: 'Criação de interfaces móveis intuitivas e eficientes, projetadas para oferecer uma experiência de usuário fluida e envolvente em smartphones e tablets.'
+    },
+    {
+        title: 'Implementação de RESTful APIs',
+        description: 'Desenvolvimento de APIs RESTful robustas e escaláveis, permitindo a integração simplificada de sistemas e o compartilhamento eficiente de dados entre plataformas.'
+    },
+    {
+        title: 'Componentes Web Modularizados',
+        description: 'Construção de componentes web modulares e flexíveis, promovendo a reutilização de código e a consistência visual em todo o projeto.'
+    },
+    {
+        title: 'Publicação de Aplicativos Mobile',
+        description: 'Assistência completa no processo de publicação de aplicativos nas principais lojas virtuais, garantindo que seu aplicativo alcance o público-alvo desejado.'
+    },
+    {
+        title: 'Serviços Personalizados sob Medida',
+        description: 'Adaptação de serviços para atender às necessidades específicas de cada cliente, proporcionando soluções exclusivas e de alta qualidade.'
+    },
+]

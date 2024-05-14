@@ -1,5 +1,7 @@
-export interface ISkillProps {
-    icon: React.ElementType
+export interface IAbilitiyProps {
+    isServices?: boolean
+    serviceIcon?: React.ReactNode
+    icon?: React.ElementType
     title: string
     description: string
 }

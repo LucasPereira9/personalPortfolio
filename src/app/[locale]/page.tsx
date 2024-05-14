@@ -5,7 +5,7 @@ import Header from '@/components/header';
 import AnimatedContainer from '@/components/animatedContainer';
 import PrimaryButton from '@/components/primaryButton';
 import { useTranslations } from 'next-intl';
-import { Abilities } from '@/utils';
+import { Abilities, Skills } from '@/utils';
 import Ability from '@/components/ability';
 import About from '@/components/about';
 import React from 'react';
@@ -20,6 +20,11 @@ export default function Index() {
     <AnimatedContainer key={index}> 
        <Ability icon={item.icon} title={item.title} description={item.description} />
     </AnimatedContainer>
+));
+const SkillsOptions = Skills.map((item, index) => (
+    <div key={index}> 
+      <Skill title={item.title} level={item.level} />
+    </div>
 ));
 
   const handleScrollToSection = (id: string) => {
@@ -67,9 +72,8 @@ export default function Index() {
       <div className={styles.skills_container}>
             <h1 className={styles.skill_title}>HABILIDADES</h1>
             <h3 className={styles.skill_subtitle}>Eu trabalho duro para melhorar minhas habilidades regularmente</h3>
-            <div>
-              <Skill title="HTML" level={90} />
-              <Skill title="CSS" level={80} />
+            <div className={styles.skills_content}>
+                {SkillsOptions}
             </div>
       </div>
       <div style={{height: '50vh'}} id='services' className={styles.personal_info_container}>

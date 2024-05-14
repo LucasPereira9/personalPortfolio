@@ -79,7 +79,35 @@ export const secondComplement = [
 
 export const Skills = [
     {
-        title: '',
-        level: 0
+        title: 'React.js',
+        level: 97
+    },
+    {
+        title: 'React Native',
+        level: 97
+    },
+    {
+        title: 'Next.js',
+        level: 90
+    },
+    {
+        title: 'Typescript',
+        level: 90
+    },
+    {
+        title: 'Node.js',
+        level: 80
+    },
+    {
+        title: 'Firebase',
+        level: 88
+    },
+    {
+        title: 'REST API',
+        level: 90
+    },
+    {
+        title: 'MySQL',
+        level: 85
     }
 ]

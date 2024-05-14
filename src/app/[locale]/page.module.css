@@ -81,3 +81,16 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     max-width: 80vh;
 }
+.skills_content {
+    margin-left: 30vh;
+    margin-right: 30vh;
+    margin-top: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+  }
+  
+  .skills_content > div {
+    width: 48%;
+    margin-bottom: 15px;
+  }

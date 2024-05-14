@@ -7,12 +7,13 @@
   }
   .percentage {
     left: 0;
+    position: relative;
   }
   .percentage_number {
     color: #FFFF00;
   }
   .skill_bar {
-    background-color: #7e7e7e;
+    background-color: #cfcdcd;
     height: 15px;
     border-radius: 10px;
     overflow: hidden;

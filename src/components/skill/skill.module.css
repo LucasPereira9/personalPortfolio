@@ -24,3 +24,8 @@
     background-color: #FFFF00;
     border-radius: 10px;
   }
+  .skill_title {
+    font-size: 26px;
+    color: white;
+    font-weight: bold;
+  }

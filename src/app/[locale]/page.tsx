@@ -70,8 +70,8 @@ const SkillsOptions = Skills.map((item, index) => (
        <About id='about' />
       </div>
       <div className={styles.skills_container}>
-            <h1 className={styles.skill_title}>HABILIDADES</h1>
-            <h3 className={styles.skill_subtitle}>Eu trabalho duro para melhorar minhas habilidades regularmente</h3>
+            <h1 className={styles.skill_title}>{t('HABILIDADES')}</h1>
+            <h3 className={styles.skill_subtitle}>{t('Eu trabalho duro para melhorar minhas habilidades regularmente')}</h3>
             <div className={styles.skills_content}>
                 {SkillsOptions}
             </div>

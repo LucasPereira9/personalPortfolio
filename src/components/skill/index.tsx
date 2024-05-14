@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { ISkillProps } from './skill.structure';
 
 const Skill = (props: ISkillProps) => {
-    const { ref, inView } = useInView({ triggerOnce: true });
+    const { ref, inView } = useInView({ triggerOnce: false });
 
     
     const springProps = useSpring({
@@ -28,7 +28,7 @@ const Skill = (props: ISkillProps) => {
   return (
     <div className={styles.skill} ref={ref}>
         <animated.div style={titleStyle}>
-            <h3>{props.title}</h3>
+            <h3 className={styles.skill_title}>{props.title}</h3>
         </animated.div>
         <animated.div className={styles.percentage} style={percentageStyle}>      
             <h3 className={styles.percentage_number}>{props.level}%</h3>

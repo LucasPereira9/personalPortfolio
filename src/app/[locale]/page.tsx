@@ -11,7 +11,7 @@ import About from '@/components/about';
 import React from 'react';
 import Skill from '@/components/skill';
 import Services from '@/components/services';
-import Experience from '@/components/experience';
+import Experience from '@/components/professionalExperience';
  
 export default function Index() {
   const [changingLanguage, setChangingLanguage] = React.useState(true as boolean);
@@ -81,8 +81,8 @@ const SkillsOptions = Skills.map((item, index) => (
       <div className={styles.personal_info_container}>
         <Services id='services' />
       </div>
-      <div style={{marginTop: '90vh'}} id='experience' className={styles.personal_info_container}>
-        <Experience />
+      <div className={styles.personal_info_container}>
+        <Experience id='experience' />
         <div>
         </div>
       </div>

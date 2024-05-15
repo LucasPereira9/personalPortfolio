@@ -1,0 +1,18 @@
+.title_container {
+    align-items: center;
+    display: flex;
+    margin-top: 12vh;
+    flex-direction: column;
+}
+.title {
+    color: #FFFF00;
+    font-size: 38px;
+    margin-bottom: 3vh;
+    font-weight: bold;
+}
+.subtitle {
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    max-width: 80vh;
+}

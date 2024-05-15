@@ -14,7 +14,13 @@
     width: 8vh;
 }
 .title {
-    color: white;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 26px;
     padding-top: 4vh;
     padding-bottom: 2vh; 
+}
+.subtitle {
+    font-size: 22px;
+    color: rgba(230, 232, 235, 0.562);
 }

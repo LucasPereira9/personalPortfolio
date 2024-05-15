@@ -24,6 +24,19 @@
     "Disponível": "Available",
     "Carregar CV": "Download CV",
     "HABILIDADES": "SKILLS",
-    "Eu trabalho duro para melhorar minhas habilidades regularmente": "I work hard to improve my skills regularly"
+    "Eu trabalho duro para melhorar minhas habilidades regularmente": "I work hard to improve my skills regularly",
+    "O que eu faço pelos meus clientes": "What I do for my clients",
+    "Design Responsivo para Web": "Responsive Design for Web",
+    "Desenvolvimento de interfaces web adaptáveis": "Development of adaptable web interfaces that provide a visually appealing and functional experience on different devices and screen sizes.",
+    "Experiência Mobile": "Mobile Experience",
+    "Criação de interfaces móveis intuitivas e eficientes": "Creation of intuitive and efficient mobile interfaces, designed to offer a smooth and engaging user experience on smartphones and tablets.",
+    "Implementação de RESTful APIs": "Implementation of RESTful APIs",
+    "Desenvolvimento de APIs RESTful robustas e escaláveis": "Development of robust and scalable RESTful APIs, enabling simplified system integration and efficient data sharing between platforms.",
+    "Componentes Web Modularizados": "Modularized Web Components",
+    "Construção de componentes web modulares e flexíveis": "Construction of modular and flexible web components, promoting code reuse and visual consistency throughout the project.",
+    "Publicação de Aplicativos Mobile": "Publication of Mobile Applications",
+    "Assistência completa no processo de publicação de aplicativos": "Complete assistance in the process of publishing applications in major app stores, ensuring that your application reaches the desired target audience.",
+    "Serviços Personalizados sob Medida": "Custom Tailored Services",
+    "Adaptação de serviços para atender às necessidades específicas de cada cliente": "Adaptation of services to meet the specific needs of each client, providing unique and high-quality solutions."
   }
 }

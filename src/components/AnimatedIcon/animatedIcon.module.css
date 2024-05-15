@@ -26,8 +26,8 @@
   .icon.icon_transition {
     color: black;
     position: relative;
-    right: 0;
-    bottom: -1vh;
-    height: 7vh;
-    width: 7vh;
+    right: 0.2vh;
+    bottom: -1.5vh;
+    height: 6vh;
+    width: 6vh;
   }

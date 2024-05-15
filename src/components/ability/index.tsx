@@ -13,7 +13,7 @@ export default function Ability(props: IAbilitiyProps) {
             <div style={{display: isServiceType ? 'flex' : undefined, flexDirection: 'column', alignItems: 'center' }} className={styles.content}>
                 {isServiceType ? props.serviceIcon : <Icon className={styles.icon} /> }
                 <h2 className={styles.title}>{t(props.title)}</h2>
-                <h3 style={{fontSize: '24px'}}>{t(props.description)}</h3>
+                <h3 className={styles.subtitle}>{t(props.description)}</h3>
             </div>
         </div>
     )

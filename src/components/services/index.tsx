@@ -5,9 +5,11 @@ import AnimatedContainer from "../animatedContainer";
 import { ServicesOptions } from "@/utils";
 import AnimatedIcon from "../AnimatedIcon";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 
 export default function Services(props: IServicesProps) {
+    const t = useTranslations('index');
 
     const [hoveredItems, setHoveredItems] = React.useState(Array(ServicesOptions.length).fill(false));
 
@@ -34,8 +36,8 @@ export default function Services(props: IServicesProps) {
     return (
         <div className={styles.container} id={props.id}>
             <div className={styles.title_container}>
-                 <h3 className={styles.title}>services</h3>
-                 <h3 className={styles.subtitle}>O que eu faço pelos meus clientes</h3>
+                 <h3 className={styles.title}>{t('Serviços')}</h3>
+                 <h3 className={styles.subtitle}>{t('O que eu faço pelos meus clientes')}</h3>
             </div>
             <div className={styles.service_content}>
                 {ServicesList}

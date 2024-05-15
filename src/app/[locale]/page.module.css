@@ -70,13 +70,13 @@
     justify-content: center;
     margin-top: 15vh;
 }
-.skill_title {
+.title {
     color: #FFFF00;
     font-size: 30px;
     margin-bottom: 3vh;
-    font-weight: 400;
+    font-weight: bold;
 }
-.skill_subtitle {
+.subtitle {
     text-align: center;
     font-size: 46px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -84,7 +84,7 @@
 }
 .skills_content {
     margin-left: 30vh;
-    margin-right: 30vh;
+    margin-right: 16vh;
     margin-top: 10vh;
     display: flex;
     flex-wrap: wrap;

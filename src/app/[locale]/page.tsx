@@ -10,6 +10,7 @@ import Ability from '@/components/ability';
 import About from '@/components/about';
 import React from 'react';
 import Skill from '@/components/skill';
+import Services from '@/components/services';
  
 export default function Index() {
   const [changingLanguage, setChangingLanguage] = React.useState(true as boolean);
@@ -70,27 +71,23 @@ const SkillsOptions = Skills.map((item, index) => (
        <About id='about' />
       </div>
       <div className={styles.skills_container}>
-            <h1 className={styles.skill_title}>{t('HABILIDADES')}</h1>
-            <h3 className={styles.skill_subtitle}>{t('Eu trabalho duro para melhorar minhas habilidades regularmente')}</h3>
+            <h1 className={styles.title}>{t('HABILIDADES')}</h1>
+            <h3 className={styles.subtitle}>{t('Eu trabalho duro para melhorar minhas habilidades regularmente')}</h3>
             <div className={styles.skills_content}>
                 {SkillsOptions}
             </div>
       </div>
-      <div style={{height: '50vh'}} id='services' className={styles.personal_info_container}>
-        <div>
-            <p className={styles.first_name}>serviços</p>
-        </div>
-        <div>
-        </div>
+      <div className={styles.personal_info_container}>
+        <Services id='services' />
       </div>
-      <div style={{height: '50vh'}} id='experience' className={styles.personal_info_container}>
+      <div style={{marginTop: '100vh'}} id='experience' className={styles.personal_info_container}>
         <div>
             <p className={styles.first_name}>experiencia profissional</p>
         </div>
         <div>
         </div>
       </div>
-      <div style={{height: '50vh'}} id='contact' className={styles.personal_info_container}>
+      <div style={{height: '100vh'}} id='contact' className={styles.personal_info_container}>
         <div>
             <p className={styles.first_name}>contato</p>
         </div>

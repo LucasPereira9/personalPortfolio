@@ -1,5 +1,6 @@
 .animated_container {
     position: relative;
+    margin: 3vh;
     perspective: 1000px; 
   }
   

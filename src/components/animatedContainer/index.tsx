@@ -1,8 +1,9 @@
 "use client"
 import React, { useState } from 'react';
 import styles from './animated.module.css'
+import { IAnimatedContainerProps } from './animatedContainer.structure';
 
-const AnimatedContainer = ({ children }) => {
+const AnimatedContainer = (props: IAnimatedContainerProps) => {
     const containerRef = React.useRef(null);
 
     React.useEffect(() => {
@@ -35,9 +36,9 @@ const AnimatedContainer = ({ children }) => {
     }, []);
 
   return (
-    <div ref={containerRef} className={styles.animated_container}>
+    <div onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave} ref={containerRef} className={styles.animated_container}>
       <div className={styles.content}>
-        {children}
+        {props.children}
       </div>
     </div>
   );

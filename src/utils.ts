@@ -1,4 +1,5 @@
-import {AiOutlineGateway, AiOutlineHighlight, AiOutlineLineChart } from 'react-icons/ai';
+import {AiFillTool, AiOutlineApi, AiOutlineAppstore, AiOutlineDesktop, AiOutlineGateway, AiOutlineHighlight, AiOutlineLineChart, AiOutlineMobile } from 'react-icons/ai';
+import { FaAppStore } from 'react-icons/fa';
 
 
 export const navOptions = [
@@ -110,4 +111,36 @@ export const Skills = [
         title: 'MySQL',
         level: 85
     }
+]
+export const ServicesOptions = [
+    {
+        title: 'Design Responsivo para Web',
+        description: 'Desenvolvimento de interfaces web adaptáveis',
+        icon: AiOutlineDesktop
+    },
+    {
+        title: 'Experiência Mobile',
+        description: 'Criação de interfaces móveis intuitivas e eficientes',
+        icon: AiOutlineMobile
+    },
+    {
+        title: 'Implementação de RESTful APIs',
+        description: 'Desenvolvimento de APIs RESTful robustas e escaláveis',
+        icon: AiOutlineApi
+    },
+    {
+        title: 'Componentes Web Modularizados',
+        description: 'Construção de componentes web modulares e flexíveis',
+        icon: AiOutlineAppstore
+    },
+    {
+        title: 'Publicação de Aplicativos Mobile',
+        description: 'Assistência completa no processo de publicação de aplicativos',
+        icon: FaAppStore
+    },
+    {
+        title: 'Serviços Personalizados sob Medida',
+        description: 'Adaptação de serviços para atender às necessidades específicas de cada cliente',
+        icon: AiFillTool
+    },
 ]

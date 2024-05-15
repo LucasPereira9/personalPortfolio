@@ -25,9 +25,9 @@ export default function Services(props: IServicesProps) {
 
     const ServicesList = ServicesOptions.map((item, index) => (
         <AnimatedContainer 
-        key={index}
-        onMouseEnter={() => handleMouseEnter(index)}
-        onMouseLeave={() => handleMouseLeave(index)}> 
+            key={index}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={() => handleMouseLeave()}> 
            <Ability serviceIcon={<AnimatedIcon icon={item.icon} isHovered={hoveredItems[index]} />} isServices icon={item.icon} title={item.title} description={item.description} />
         </AnimatedContainer>
     ));

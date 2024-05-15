@@ -86,7 +86,7 @@ const SkillsOptions = Skills.map((item, index) => (
         <div>
         </div>
       </div>
-      <div style={{marginTop: '90vh'}} id='contact' className={styles.personal_info_container}>
+      <div style={{marginTop: '90vh', backgroundColor: 'red', height: '200vh'}} id='contact' className={styles.personal_info_container}>
         <div>
             <p className={styles.first_name}>contato</p>
         </div>

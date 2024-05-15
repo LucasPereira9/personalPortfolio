@@ -12,10 +12,26 @@ import { IHeaderProps } from "./header.structure";
 export default function Header(props: IHeaderProps) {
     const [selectedButtonIndex, setSelectedButtonIndex] = React.useState(0 as number);
     const [scrolled, setScrolled] = React.useState(false as boolean);
+    const [clicked, setClicked] = React.useState(false as boolean);
     const [isPending, startTransition] = useTransition()
     const router = useRouter()
 
     
+    const handleScrollToSection = (id: string) => {
+        setClicked(true)
+        if (id === "home") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+        setTimeout(() => {
+            setClicked(false)
+            }, 1000);
+    };
+
     const navigationOptions = navOptions.map((item, index) => (
         <div key={index}> 
             <NavButton 
@@ -40,47 +56,33 @@ export default function Header(props: IHeaderProps) {
         </div>
     ));
 
-    const handleScrollToSection = (id: string) => {
-        if (id === "home") {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        } else {
-            const element = document.getElementById(id);
-            if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
-            }
-        }
-    };
 
     React.useEffect(() => {
         const handleScroll = () => {
             const isScrolled = window.scrollY > 0;
             setScrolled(isScrolled);
-          const isElementInViewport = (el) => {
-            const rect = el.getBoundingClientRect();
-            return (
-              rect.top >= 0 &&
-              rect.left >= 0 &&
-              rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-              rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-          };
-      
-          const sections = ['home', 'about', 'services', 'experience', 'contact'];
-      
-          sections.forEach((id, index) => {
-            const element = document.getElementById(id);
-            if (element && isElementInViewport(element)) {
-              setSelectedButtonIndex(index);
+            if (!clicked) {
+            const sections = ['home', 'about', 'services', 'experience', 'contact'];
+            let currentSectionIndex = 0;
+  
+            sections.forEach((id, index) => {
+                const element = document.getElementById(id);
+                    if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= 0) {
+                        currentSectionIndex = index;
+                    }
             }
-          });
+      });
+            setSelectedButtonIndex(currentSectionIndex);
+            }
         };
-      
         window.addEventListener('scroll', handleScroll);
       
         return () => {
           window.removeEventListener('scroll', handleScroll);
         };
-      }, []);
+      }, [clicked]);
 
 
     return (

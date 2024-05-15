@@ -14,16 +14,14 @@ export default function Services(props: IServicesProps) {
     const [hoveredItems, setHoveredItems] = React.useState(Array(ServicesOptions.length).fill(false));
 
     const handleMouseEnter = (index: number) => {
-      const updatedHoveredItems = [...hoveredItems];
-      updatedHoveredItems[index] = true;
-      setHoveredItems(updatedHoveredItems);
-    };
-  
-    const handleMouseLeave = (index: number) => {
-      const updatedHoveredItems = [...hoveredItems];
-      updatedHoveredItems[index] = false;
-      setHoveredItems(updatedHoveredItems);
-    };
+        const updatedHoveredItems = Array(ServicesOptions.length).fill(false);
+        updatedHoveredItems[index] = true;
+        setHoveredItems(updatedHoveredItems);
+      };
+      
+      const handleMouseLeave = () => {
+        setHoveredItems(Array(ServicesOptions.length).fill(false));
+      };
 
     const ServicesList = ServicesOptions.map((item, index) => (
         <AnimatedContainer 

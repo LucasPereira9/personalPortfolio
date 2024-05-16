@@ -150,7 +150,7 @@ export const WorkedCompanyes = [
         title: 'Front-End Developer',
         date: '(10/2021 - 02/2024)',
         company: 'Qesh Payments',
-        description: 'foco em suporte e desenvolvimento. Correções de bugs e melhorias em produção, garantindo conformidade com os requisitos da Play Store.'
+        description: 'foco em suporte e desenvolvimento'
     }
 ]
 export const StudyHistory = [
@@ -158,18 +158,18 @@ export const StudyHistory = [
         title: 'Typescript Online Course',
         date: '(2022 - 2022)',
         company: 'Udemy',
-        description: 'Curso online sobre TypeScript, cobrindo desde a sintaxe básica até conceitos avançados como tipos avançados, interfaces e generics.'
+        description: 'Curso online sobre TypeScript, cobrindo desde a sintaxe básica até conceitos avançados como tipos avançados, interfaces e generics'
     },
     {
         title: 'React Native',
         date: '(2020 - 2020)',
         company: 'RocketSeat',
-        description: ' Curso prático voltado para o desenvolvimento de aplicativos móveis usando React Native, incluindo navegação, componentes nativos e integração com APIs externas.'
+        description: 'Curso prático voltado para o desenvolvimento de aplicativos móveis usando React Native, incluindo navegação, componentes nativos e integração com APIs externas'
     },
     {
         title: 'React.js',
         date: '(2020 - 2020)',
         company: 'Alura',
-        description: ' Treinamento focado na biblioteca React.js, abordando desde conceitos básicos até tópicos avançados como Hooks, Context API e Redux.'
+        description: 'Treinamento focado na biblioteca'
     },
 ]

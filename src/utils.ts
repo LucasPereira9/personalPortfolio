@@ -1,4 +1,4 @@
-import {AiFillTool, AiOutlineApi, AiOutlineAppstore, AiOutlineDesktop, AiOutlineGateway, AiOutlineHighlight, AiOutlineLineChart, AiOutlineMobile } from 'react-icons/ai';
+import {AiFillEnvironment, AiFillMail, AiFillPhone, AiFillTool, AiOutlineApi, AiOutlineAppstore, AiOutlineDesktop, AiOutlineGateway, AiOutlineHighlight, AiOutlineLineChart, AiOutlineMobile } from 'react-icons/ai';
 import { FaAppStore } from 'react-icons/fa';
 
 
@@ -171,5 +171,22 @@ export const StudyHistory = [
         date: '(2020 - 2020)',
         company: 'Alura',
         description: 'Treinamento focado na biblioteca'
+    },
+]
+export const ContactData = [
+    {
+        icon: AiFillEnvironment,
+        title: 'Endereço',
+        subtitle: 'Vila Cristina, Betim - MG Brasil'
+    },
+    {
+        icon: AiFillMail,
+        title: 'Email',
+        subtitle: 'lucas970997@gmail.com'
+    },
+    {
+        icon: AiFillPhone,
+        title: 'Telefone',
+        subtitle: '+55 (31) 99345-4507'
     },
 ]

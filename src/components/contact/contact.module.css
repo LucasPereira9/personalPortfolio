@@ -19,8 +19,7 @@
 }
 .content {
     display: flex;
-    background-color: blue;
     justify-content: space-between;
     height: 100vh;
-    width: 150vh;
+    width: 120vh;
 }

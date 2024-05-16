@@ -1,0 +1,19 @@
+
+.input {
+    background-color: transparent;
+    border-radius: 1vh;
+    border-color: rgba(187, 185, 185, 0.616);
+    border-width: 0.5px;
+    color: rgb(175, 174, 174);
+    padding: 1vh;
+    font-size: 22px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: left;
+    height: 6vh;
+    width: 35vh;
+    transition: border-color 0.4s;
+}
+.focused {
+    border-color: #FFFF00;
+    outline: none;
+  }

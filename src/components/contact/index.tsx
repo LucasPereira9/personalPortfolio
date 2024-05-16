@@ -2,6 +2,7 @@ import { ContactData } from '@/utils';
 import ContactInfo from '../contactInfo'
 import styles from './contact.module.css'
 import { IContactProps } from './contact.structure'
+import Input from '../input';
 
 
 export default function Contact(props: IContactProps) {
@@ -24,7 +25,9 @@ export default function Contact(props: IContactProps) {
                     {ContactOptions}
                 </div>
                 <div>
-                    <h3>email entrar em contato</h3>
+                    <Input />
+                    <Input />
+                    <Input />
                 </div>
             </div>
         </div>

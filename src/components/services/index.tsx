@@ -32,7 +32,7 @@ export default function Services(props: IServicesProps) {
         </AnimatedContainer>
     ));
     return (
-        <div className={styles.container} id={props.id}>
+        <div id={props.id}>
             <div className={styles.title_container}>
                  <h3 className={styles.title}>{t('Serviços')}</h3>
                  <h3 className={styles.subtitle}>{t('O que eu faço pelos meus clientes')}</h3>

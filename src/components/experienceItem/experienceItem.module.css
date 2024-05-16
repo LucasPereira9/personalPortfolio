@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+}
+.icon_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icon {
+    background-color: #FFFF00;
+    padding: 1vh;
+    border-radius: 10vh;
+    height: 8vh;
+    width: 8vh;
+}
+.separator {
+    border-left-width: 2px;
+    border-left-style: solid; 
+    border-left-color: rgba(230, 223, 223, 0.555);
+    height: 14vh;
+}
+.title_content {
+    display: flex;
+    align-items: center;
+    margin: 2vh;
+}
+.title {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 26px;
+    margin-right: 2vh;
+}
+.subtitle {
+    font-size: 22px;
+    color: rgba(169, 169, 170, 0.856);
+}
+.description_content {
+    max-width: 50vh;
+}
+.company {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 2vh;
+    margin-left: 3vh;
+}
+.description {
+    color: rgba(156, 154, 154, 0.788);
+    font-size: 19px;
+    margin-left: 3vh;
+}

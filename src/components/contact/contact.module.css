@@ -20,6 +20,9 @@
 .content {
     display: flex;
     justify-content: space-between;
-    height: 100vh;
-    width: 120vh;
+    width: 150vh;
+}
+.inputs_container {
+    display: flex;
+
 }

@@ -12,29 +12,30 @@ import React from 'react';
 import Skill from '@/components/skill';
 import Services from '@/components/services';
 import Experience from '@/components/professionalExperience';
+import Contact from '@/components/contact';
  
 export default function Index() {
   const [changingLanguage, setChangingLanguage] = React.useState(true as boolean);
   
   const t = useTranslations('index');
   
-  const AbilitiesOptions = Abilities.map((item, index) => (
-    <AnimatedContainer key={index}> 
-       <Ability icon={item.icon} title={item.title} description={item.description} />
-    </AnimatedContainer>
-));
-const SkillsOptions = Skills.map((item, index) => (
-    <div key={index}> 
-      <Skill title={item.title} level={item.level} />
-    </div>
-));
+      const AbilitiesOptions = Abilities.map((item, index) => (
+          <AnimatedContainer key={index}> 
+            <Ability icon={item.icon} title={item.title} description={item.description} />
+          </AnimatedContainer>
+      ));
+      const SkillsOptions = Skills.map((item, index) => (
+          <div key={index}> 
+            <Skill title={item.title} level={item.level} />
+          </div>
+      ));
 
-  const handleScrollToSection = (id: string) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-        }
-};
+      const handleScrollToSection = (id: string) => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+      };
 
   React.useEffect(() => {
     if (changingLanguage) {
@@ -86,10 +87,8 @@ const SkillsOptions = Skills.map((item, index) => (
         <div>
         </div>
       </div>
-      <div style={{marginTop: '90vh', backgroundColor: 'red', height: '200vh'}} id='contact' className={styles.personal_info_container}>
-        <div>
-            <p className={styles.first_name}>contato</p>
-        </div>
+      <div className={styles.personal_info_container}>
+        <Contact id='contact' />
       </div>
     </div>
   )

@@ -1,0 +1,33 @@
+.container {
+    align-items: center;
+    display: flex;
+    margin-bottom: 3vh;
+    width: 38vh;
+}
+.icon_content {
+    align-items: center;
+    background-color: #FFFF00;
+    border-radius: 10vh;
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    min-width: 10vh;
+}
+.icon {
+    height: 5vh;
+    width: 5vh;
+}
+.title_content {
+    margin-left: 1vh;
+}
+
+.title {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 1vh;
+}
+.subtitle {
+    color: rgba(156, 154, 154, 0.788);
+    font-size: 20px;
+}

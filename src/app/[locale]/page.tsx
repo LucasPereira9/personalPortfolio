@@ -90,6 +90,11 @@ export default function Index() {
       <div className={styles.personal_info_container}>
         <Contact id='contact' />
       </div>
+      <div className={styles.footer}>
+        <footer className={styles.footer_text_style}>
+       Desenvolvido por Lucas Almeida © 2024
+        </footer>
+      </div>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 .title_container {
     align-items: center;
     display: flex;
-    margin-top: 12vh;
+    margin-top: 14vh;
     flex-direction: column;
 }
 .title {

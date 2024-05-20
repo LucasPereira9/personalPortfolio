@@ -1,5 +1,4 @@
-"use client"
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './animated.module.css'
 import { IAnimatedContainerProps } from './animatedContainer.structure';
 
@@ -14,7 +13,7 @@ const AnimatedContainer = (props: IAnimatedContainerProps) => {
             const centerY = boundingRect.top + boundingRect.height / 2;
             const offsetX = e.clientX - centerX;
             const offsetY = e.clientY - centerY;
-            const maxRotation = 10;
+            const maxRotation = 20;
             const tiltX = (offsetY / boundingRect.height) * maxRotation;
             const tiltY = -(offsetX / boundingRect.width) * maxRotation;
                 container.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;

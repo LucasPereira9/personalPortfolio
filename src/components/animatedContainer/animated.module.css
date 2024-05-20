@@ -2,6 +2,7 @@
     position: relative;
     margin: 3vh;
     perspective: 1000px; 
+    transition: transform 0.3s ease-out; 
   }
   
   .content {

@@ -1,23 +1,47 @@
-
 .input {
-    background-color: transparent;
-    border-radius: 1vh;
-    border-color: rgba(187, 185, 185, 0.616);
-    border-width: 0.5px;
-    color: rgba(255, 255, 255, 0.938);
-    padding: 1vh;
-    margin: 6px;
-    font-size: 22px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-align: left;
-    height: 8vh;
-    width: 38vh;
-    transition: border-color 0.4s;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 1vh;
+  border-color: rgba(187, 185, 185, 0.616);
+  border-width: 2px;
+  color: rgba(255, 255, 255, 0.938);
+  display: flex;
+  justify-content: center;
+  padding: 1vh;
+  margin: 6px;
+  font-size: 22px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: left;
+  height: 6vh;
+  width: 38vh;
+  transition: border-color 0.4s;
+  resize: none;
 }
+.message_input {
+  align-items: center;
+  background-color: transparent;
+  border-radius: 1vh;
+  border-color: rgba(187, 185, 185, 0.616);
+  border-width: 2px;
+  color: rgba(255, 255, 255, 0.938);
+  display: flex;
+  justify-content: center;
+  padding: 1vh;
+  margin: 6px;
+  font-size: 22px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: left;
+  height: 30vh;
+  width: 77vh;
+  transition: border-color 0.4s;
+  resize: none;
+}
+
 .input::placeholder {
-    color: rgba(255, 255, 255, 0.651);
+  color: rgba(255, 255, 255, 0.651);
 }
+
 .focused {
-    border-color: #FFFF00;
-    outline: none;
-  }
+  border-color: #FFFF00;
+  outline: none;
+}

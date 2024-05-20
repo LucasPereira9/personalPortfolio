@@ -5,6 +5,7 @@ import { IContactProps, IFormDataProps } from './contact.structure'
 import Input from '../input';
 import React from 'react';
 import PrimaryButton from '../primaryButton';
+import emailjs from 'emailjs-com';
 
 
 export default function Contact(props: IContactProps) {
@@ -16,34 +17,22 @@ export default function Contact(props: IContactProps) {
         </div>
     ));
     
-  const handleSubmit = async () => {
-    console.log(formData)
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/lucas970997@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          subject: formData.subject,
-          message: formData.message
-        }),
-      });
-
-      const result = await response.json();
-      if (result.success === 'true') {
-        console.log('Formulário enviado com sucesso!');
-      } else {
-        console.log('Erro ao enviar o formulário.');
+    const handleSubmit = async () => {
+      const templateParams = {
+        from_name: formData.name,
+        subject: formData.subject,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message
       }
-    } catch (error) {
-      console.log('Erro ao enviar o formulário.');
-    }
-  };
+      emailjs.send('service_pvcsxgo', 'template_b9qwfma', templateParams, 'iqqP0JO7raz8NTLu5')
+      .then((response) => {
+        console.log('Email sent successfully!', response);
+      })
+      .catch((error) => {
+        console.error('Email failed to send:', error);
+      });
+    };
 
 
     return (

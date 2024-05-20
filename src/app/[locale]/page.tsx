@@ -92,7 +92,7 @@ export default function Index() {
       </div>
       <div className={styles.footer}>
         <footer className={styles.footer_text_style}>
-       Desenvolvido por Lucas Almeida © 2024
+            {t('Desenvolvido por Lucas Almeida © 2024')}
         </footer>
       </div>
     </div>

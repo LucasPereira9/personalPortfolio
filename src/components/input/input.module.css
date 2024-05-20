@@ -1,22 +1,4 @@
-.input {
-  align-items: center;
-  background-color: transparent;
-  border-radius: 1vh;
-  border-color: rgba(187, 185, 185, 0.616);
-  border-width: 2px;
-  color: rgba(255, 255, 255, 0.938);
-  display: flex;
-  justify-content: center;
-  padding: 1vh;
-  margin: 6px;
-  font-size: 22px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  text-align: left;
-  height: 6vh;
-  width: 38vh;
-  transition: border-color 0.4s;
-  resize: none;
-}
+.input,
 .message_input {
   align-items: center;
   background-color: transparent;
@@ -31,14 +13,23 @@
   font-size: 22px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align: left;
-  height: 30vh;
-  width: 77vh;
   transition: border-color 0.4s;
   resize: none;
 }
 
-.input::placeholder {
-  color: rgba(255, 255, 255, 0.651);
+.input {
+  height: 6vh;
+  width: 38vh;
+}
+
+.message_input {
+  height: 30vh;
+  width: 77vh;
+}
+
+.input::placeholder,
+.message_input::placeholder {
+  color: rgba(247, 243, 243, 0.74);
 }
 
 .focused {

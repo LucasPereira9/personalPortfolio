@@ -10,6 +10,7 @@ import emailjs from 'emailjs-com';
 
 export default function Contact(props: IContactProps) {
     const [formData, setFormData] = React.useState<IFormDataProps>({ name: '', email: '', phone: '', subject: '', message: '' });
+    const [isLoading, setIsLoading] =  React.useState(false as boolean)
 
     const ContactOptions = ContactData.map((item, index) => (
         <div key={index}> 
@@ -18,6 +19,7 @@ export default function Contact(props: IContactProps) {
     ));
     
     const handleSubmit = async () => {
+        setIsLoading(true)
       const templateParams = {
         from_name: formData.name,
         subject: formData.subject,
@@ -27,9 +29,18 @@ export default function Contact(props: IContactProps) {
       }
       emailjs.send('service_pvcsxgo', 'template_b9qwfma', templateParams, 'iqqP0JO7raz8NTLu5')
       .then((response) => {
+        setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: ''
+          });
+          setIsLoading(false)
         console.log('Email sent successfully!', response);
       })
       .catch((error) => {
+        setIsLoading(false)
         console.error('Email failed to send:', error);
       });
     };
@@ -55,7 +66,7 @@ export default function Contact(props: IContactProps) {
                         <Input placeHolder='Assunto' value={formData.subject}  setValue={setFormData} fieldName="subject"  />
                     </div>
                         <Input isMessageType placeHolder='Escreva sua mensagem' value={formData.message}  setValue={setFormData} fieldName="message"  />
-                 <PrimaryButton title='enviar' buttonFunction={ () => handleSubmit()} />
+                 <PrimaryButton isLoading={isLoading} title='enviar' buttonFunction={ () => handleSubmit()} />
                 </div>
             </div>
         </div>

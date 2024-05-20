@@ -1,15 +1,13 @@
 .container {
     align-items: center;
-    border-radius: 4vh;
+    border-radius: 6vh;
     cursor: pointer;
     display: flex;
     justify-content: center;
     height: 6vh;
-    width: 30vh;
+    width: 28vh;
     background-color: #FFFF00;
-    background-image: linear-gradient(to top, rgba(30, 5, 255, 0.747), #140A48);
-    background-size: 100% 0%;
-    transition: background-size 0.8s ease;
+    transition: background-color 0.4s ease, transform 0.5s ease;
 }
 .title {
     color: black;
@@ -17,7 +15,8 @@
 }
 
 .container:hover {
-    background-size: 100% 100%;
+    background-color: #412da8;
+    transform: scale(1.03);
 }
 .container:hover .title {
     color: white;

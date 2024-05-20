@@ -60,7 +60,7 @@ export default function About(props: IAboutProps) {
                     </div>
                 </div>
                 <div className={styles.button_container}>
-                    <PrimaryButton buttonFunction={() => handleDownload()} title={t('Carregar CV')} />
+                    <PrimaryButton buttonFunction={() => handleDownload()} title={'Carregar CV'} />
                 </div>
             </div>
         </div>

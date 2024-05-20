@@ -30,12 +30,12 @@ export default function Index() {
           </div>
       ));
 
-      const handleScrollToSection = (id: string) => {
-            const element = document.getElementById(id);
-            if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
-            }
-      };
+      const handleScrollToBottom = () => {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+    };
 
   React.useEffect(() => {
     if (changingLanguage) {
@@ -56,7 +56,7 @@ export default function Index() {
             <p className={styles.second_name}>Almeida</p>
             <h2>{t('Desenvolvedor Full-Stack')}</h2>
             <div className={styles.button_container}>
-               <PrimaryButton buttonFunction={() => handleScrollToSection('contact')} title={t('Entrar em Contato')} />
+               <PrimaryButton buttonFunction={() => handleScrollToBottom()} title={'Entrar em Contato'} />
             </div>
         </div>
           <AnimatedContainer>

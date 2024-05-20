@@ -45,6 +45,13 @@
       "foco em suporte e desenvolvimento": "Enfoque en soporte y desarrollo, correcciones de errores y mejoras en producción, garantizando conformidad con los requisitos de la Play Store.",
       "Curso online sobre TypeScript, cobrindo desde a sintaxe básica até conceitos avançados como tipos avançados, interfaces e generics": "Curso en línea sobre TypeScript, que abarca desde la sintaxis básica hasta conceptos avanzados como tipos avanzados, interfaces y genéricos.",
       "Curso prático voltado para o desenvolvimento de aplicativos móveis usando React Native, incluindo navegação, componentes nativos e integração com APIs externas": "Curso práctico enfocado en el desarrollo de aplicaciones móviles usando React Native, incluyendo navegación, componentes nativos e integración con APIs externas.",
-      "Treinamento focado na biblioteca": "Entrenamiento enfocado en la biblioteca React.js, cubriendo desde conceptos básicos hasta temas avanzados como Hooks, Context API y Redux."
-}
+      "Treinamento focado na biblioteca": "Entrenamiento enfocado en la biblioteca React.js, cubriendo desde conceptos básicos hasta temas avanzados como Hooks, Context API y Redux.",
+      "Queremos ouvir de você": "Queremos saber de ti",
+      "Seu nome": "Tu nombre",
+      "Seu Email": "Tu correo electrónico",
+      "Seu Telefone": "Tu teléfono",
+      "Assunto": "Asunto",
+      "Escreva sua mensagem": "Escribe tu mensaje",
+      "Enviar": "Enviar"
+    }
   }

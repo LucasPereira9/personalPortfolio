@@ -6,11 +6,15 @@ import Input from '../input';
 import React from 'react';
 import PrimaryButton from '../primaryButton';
 import emailjs from 'emailjs-com';
+import { useTranslations } from 'next-intl';
 
 
 export default function Contact(props: IContactProps) {
     const [formData, setFormData] = React.useState<IFormDataProps>({ name: '', email: '', phone: '', subject: '', message: '' });
     const [isLoading, setIsLoading] =  React.useState(false as boolean)
+    const [isDisabled, setIsDisabled] =  React.useState(true as boolean)
+    const t = useTranslations('index');
+
 
     const ContactOptions = ContactData.map((item, index) => (
         <div key={index}> 
@@ -45,12 +49,17 @@ export default function Contact(props: IContactProps) {
       });
     };
 
+    React.useEffect(() => {
+        const allFieldsFilled = Object.values(formData).every(value => value.trim() !== '');
+        setIsDisabled(!allFieldsFilled)
+    }, [formData]);
+
 
     return (
         <div id={props.id}>
             <div className={styles.title_container}>
-                <h3 className={styles.title}>Contato</h3>
-                <h3 className={styles.subtitle}>Queremos ouvir de você</h3>
+                <h3 className={styles.title}>{t('Contato')}</h3>
+                <h3 className={styles.subtitle}>{t('Queremos ouvir de você')}</h3>
             </div>
             <div className={styles.content}>
                 <div>
@@ -62,11 +71,11 @@ export default function Contact(props: IContactProps) {
                         <Input placeHolder='Seu Email' value={formData.email}  setValue={setFormData} fieldName="email"  />
                     </div>
                     <div className={styles.inputs_container}>
-                        <Input placeHolder='Seu Telefone' value={formData.phone}  setValue={setFormData} fieldName="phone" />
+                        <Input isNumber placeHolder='Seu Telefone' value={formData.phone}  setValue={setFormData} fieldName="phone" />
                         <Input placeHolder='Assunto' value={formData.subject}  setValue={setFormData} fieldName="subject"  />
                     </div>
                         <Input isMessageType placeHolder='Escreva sua mensagem' value={formData.message}  setValue={setFormData} fieldName="message"  />
-                 <PrimaryButton isLoading={isLoading} title='enviar' buttonFunction={ () => handleSubmit()} />
+                        <PrimaryButton isDisabled={isDisabled} isLoading={isLoading} title='Enviar' buttonFunction={ () => handleSubmit()} />
                 </div>
             </div>
         </div>

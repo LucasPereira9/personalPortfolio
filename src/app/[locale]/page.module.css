@@ -99,12 +99,12 @@
     display: flex;
     justify-content: center;
     padding: 2vh;
-    height: 20vh;
+    height: 18vh;
     width: 100%;
   }
   .footer_text_style {
     color: rgb(235, 221, 221);
-    font-size: 24px;
+    font-size: 22px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
   }

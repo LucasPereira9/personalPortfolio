@@ -6,4 +6,5 @@ export interface IInputProps {
     isMessageType?: boolean
     setValue: React.Dispatch<React.SetStateAction<IFormDataProps>>;
     fieldName: keyof IFormDataProps;
+    isNumber?: boolean;
 }

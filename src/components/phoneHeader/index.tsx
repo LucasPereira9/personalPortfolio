@@ -33,7 +33,7 @@ export default function PhoneHeader(props: IHeaderProps) {
                 {languages}
             </div>
             <div onClick={toggleMenu}>
-                {isOpen ? <FaTimes size={40} /> : <FaBars size={40} />}
+                {isOpen ? <FaTimes color='white' size={40} /> : <FaBars color='white' size={40} />}
             </div>
         </div>
     )

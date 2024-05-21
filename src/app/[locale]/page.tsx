@@ -17,7 +17,7 @@ import PhoneHeader from '@/components/phoneHeader';
  
 export default function Index() {
   const [changingLanguage, setChangingLanguage] = React.useState(true as boolean);
-  const [isPhoneHeader, setIsPhoneHeader] = React.useState(false as boolean);
+  const [isPhoneType, setIsPhoneType] = React.useState(false as boolean);
   
   const t = useTranslations('index');
   
@@ -38,39 +38,37 @@ export default function Index() {
             behavior: "smooth"
         });
     };
-
-    React.useEffect(() => {
-      if (changingLanguage) {
+ 
+      React.useEffect(() => {
+        
+        if (changingLanguage) {
         setTimeout(() => {
             setChangingLanguage(false)
           }, 300);
       }
-      function handleResize() {
+        function handleResize() {
           const screenWidth = window.innerWidth;
-          if (screenWidth < 1100) {
-            setIsPhoneHeader(true)
-        } else {
-           setIsPhoneHeader(false)
+          if (screenWidth < 1300) {
+            setIsPhoneType(true);
+          } else {
+            setIsPhoneType(false);
+          }
         }
-          
-      }
+    
+        window.addEventListener('resize', handleResize);
+    
+        handleResize();
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, [changingLanguage, isPhoneType]);
 
-      window.addEventListener('resize', handleResize);
-
-      handleResize();
-
-      return () => window.removeEventListener('resize', handleResize);
-  }, [changingLanguage, isPhoneHeader]);
-
-  React.useEffect(() => {
-   
-  },[changingLanguage, isPhoneHeader])
 
 
   return (
     <div className={`${changingLanguage ? styles.changing_language : styles.container}`}>
-      {isPhoneHeader ? <PhoneHeader flagFunction={() => setChangingLanguage(true) } /> : <Header flagFunction={() => setChangingLanguage(true) } />}
-      
+      {isPhoneType ? <PhoneHeader flagFunction={() => setChangingLanguage(true) } /> : <Header flagFunction={() => setChangingLanguage(true) } />}  
       <div id='home' className={styles.home_container}>
         <div className={styles.description_container}>
           <div className={styles.name_container}>
@@ -83,7 +81,7 @@ export default function Index() {
             </div>
         </div>
           <AnimatedContainer>
-          <Image width={400} height={500} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
+          <Image width={isPhoneType ? 350 : 400} height={isPhoneType ? 420 : 500} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
           </AnimatedContainer>
       </div>
         <div className={styles.habilities_container}>

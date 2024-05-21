@@ -22,9 +22,12 @@ export default function Index() {
   const t = useTranslations('index');
   
       const AbilitiesOptions = Abilities.map((item, index) => (
-          <AnimatedContainer key={index}> 
+        <div key={index}>
+          <AnimatedContainer> 
             <Ability icon={item.icon} title={item.title} description={item.description} />
           </AnimatedContainer>
+        </div>
+          
       ));
       const SkillsOptions = Skills.map((item, index) => (
           <div key={index}> 

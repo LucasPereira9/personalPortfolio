@@ -1,5 +1,9 @@
 .container {
-    height: 80vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
 }
 .title_container {
     align-items: center;

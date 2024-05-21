@@ -132,4 +132,8 @@
     .description_container {
         align-items: center;
     }
+    .habilities_container {
+        align-items: center;
+        flex-direction: column;
+    }
 }

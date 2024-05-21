@@ -43,7 +43,7 @@ export default function About(props: IAboutProps) {
                 </div>
                 }
                 <AnimatedContainer>
-                    <Image width={props.isPhone ? 455 : 720} height={props.isPhone ? 435 : 680} src={'/assets/images/working.png'} alt={'working'} />
+                    <Image width={props.isPhone ? 340 : 720} height={props.isPhone ? 360 : 680} src={'/assets/images/working.png'} alt={'working'} />
                 </AnimatedContainer>
                 {!props.isPhone && 
                     <div className={styles.experience}>

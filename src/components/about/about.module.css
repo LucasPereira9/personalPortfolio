@@ -24,12 +24,9 @@
     font-size: 36px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-bottom: 2vh;
-    padding-left: 3vh;
     text-align: center;
 }
 .about_description_mobile {
-    padding-left: 3vh;
-    padding-right: 2vh;
     text-align: center;
 }
 .complement {
@@ -52,7 +49,6 @@
     border-right-width: 1px;
 }
 .complement_content_mobile {
-    padding: 4vh;
     border-color: #b9b9b96c;
     border-style: solid; 
     border-width: 0px;
@@ -82,18 +78,6 @@
     height: 16vh;
     width: 14vh;
 }
-.icon_container_mobile {
-    align-items: center;
-    background-color: #FFFF00;
-    border-radius: 4vh;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    margin-top: 5vh;
-    left: 6vh;
-    height: 12vh;
-    width: 12vh;
-}
 .icon {
     color: black;
     height: 10vh;
@@ -103,7 +87,7 @@
     align-items: center;
     display: flex;
     position: absolute;
-    margin-top: -27vh;
+    margin-top: -25vh;
     left: 62vh;
     height: 20vh;
     max-width: 30vh;
@@ -119,13 +103,6 @@
     margin-right: 2vh;
     margin-left: 2vh;
     color: white;
-}
-.experience_year_mobile {
-    font-size: 10vh;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    margin-right: 2vh;
-    margin-left: 2vh;
-    color: #FFFF00;
 }
 .experience_text {
     color: white;

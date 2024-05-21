@@ -136,4 +136,9 @@
         align-items: center;
         flex-direction: column;
     }
+    .skills_content {
+        flex-direction: column;
+        margin-right: 0vh;
+        margin-left: 0vh;
+    }
 }

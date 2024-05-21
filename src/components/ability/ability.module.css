@@ -1,8 +1,8 @@
 .container {
     background-color: #412da8;
     border-radius: 2vh;
-    width: 43vh;
-    height: 50vh;
+    width: 46vh;
+    height: 48vh;
 }
 .content {
     padding: 6vh
@@ -22,4 +22,11 @@
 .subtitle {
     font-size: 22px;
     color: rgba(230, 232, 235, 0.562);
+}
+
+@media only screen and (max-width: 1110px) {
+    .container {
+        width: 40vh;
+        height: 55vh;
+    }
 }

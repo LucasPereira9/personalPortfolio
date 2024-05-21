@@ -94,7 +94,7 @@ export default function Index() {
         <div className={styles.about_title_content}>
           <h2 className={styles.about_subtitle}>{t('Um apaixonado por código')}</h2>
         </div>
-       <About id='about' />
+       <About isPhone={isPhoneType} id='about' />
       </div>
       <div className={styles.skills_container}>
             <h1 className={styles.title}>{t('HABILIDADES')}</h1>

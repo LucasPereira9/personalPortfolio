@@ -4,21 +4,33 @@
     margin-top: 10vh;
     justify-content: space-around;
 }
-.title {
-    color: #FFFF00;
-    font-size: 32px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-bottom: 4vh;
+.content_mobile {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
 }
 .about_content {
-    padding-left: 10vh;
-    max-width: 70vh;
+    max-width: 60vh;
 }
 .about_title {
     color: #FFFF00;
     font-size: 36px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-bottom: 2vh;
+}
+.about_title_mobile {
+    color: #FFFF00;
+    font-size: 36px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 2vh;
+    padding-left: 3vh;
+    text-align: center;
+}
+.about_description_mobile {
+    padding-left: 3vh;
+    padding-right: 2vh;
+    text-align: center;
 }
 .complement {
     border-color: #b9b9b96c;
@@ -29,19 +41,33 @@
     display: flex;
     justify-content: space-between;
     margin-top: 5vh;
+    margin-right: 1vh;
+    margin-left: 1vh;
 }
-.first_complement_content {
+.complement_content {
     padding: 2vh;
     border-color: #b9b9b96c;
     border-style: solid; 
     border-width: 0px;
     border-right-width: 1px;
 }
+.complement_content_mobile {
+    padding: 4vh;
+    border-color: #b9b9b96c;
+    border-style: solid; 
+    border-width: 0px;
+}
 .complement_item {
     margin-top: 1.5vh;
     margin-bottom: 1.5vh;
 }
 .button_container {
+    margin-top: 5vh;
+}
+.button_container_mobile {
+    align-items: center;
+    display: flex;
+    justify-content: center;
     margin-top: 5vh;
 }
 .icon_container {
@@ -52,21 +78,33 @@
     justify-content: center;
     position: absolute;
     margin-top: 10vh;
-    margin-right: 140vh;
+    left: 28vh;
     height: 16vh;
     width: 14vh;
+}
+.icon_container_mobile {
+    align-items: center;
+    background-color: #FFFF00;
+    border-radius: 4vh;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin-top: 5vh;
+    left: 6vh;
+    height: 12vh;
+    width: 12vh;
 }
 .icon {
     color: black;
     height: 10vh;
     width: 10vh;
 }
-.experience_container {
+.experience {
     align-items: center;
     display: flex;
     position: absolute;
-    margin-top: 47vh;
-    margin-right: 60vh;
+    margin-top: -27vh;
+    left: 62vh;
     height: 20vh;
     max-width: 30vh;
 }
@@ -82,26 +120,15 @@
     margin-left: 2vh;
     color: white;
 }
+.experience_year_mobile {
+    font-size: 10vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-right: 2vh;
+    margin-left: 2vh;
+    color: #FFFF00;
+}
 .experience_text {
     color: white;
     font-size: 28px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-.skills_container {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 20vh;
-}
-.skill_title {
-    color: #FFFF00;
-    font-size: 26px;
-    margin-bottom: 3vh;
-    font-weight: 400;
-}
-.skill_subtitle {
-    font-size: 46px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    max-width: 80vh;
 }

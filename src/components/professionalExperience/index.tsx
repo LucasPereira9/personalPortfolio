@@ -20,7 +20,7 @@ export default function Experience(props: IProfessionalExpProps) {
     ));
 
     return (
-        <div id={props.id}>
+        <div className={styles.container} id={props.id}>
             <div className={styles.title_container}>
                 <h3 className={styles.title}>{t('Resumo')}</h3>
                 <h3 className={styles.subtitle}>{t('Um pouco do meu trajeto')}</h3>

@@ -108,8 +108,6 @@ export default function Index() {
       </div>
       <div className={styles.personal_info_container}>
         <Experience id='experience' />
-        <div>
-        </div>
       </div>
       <div className={styles.personal_info_container}>
         <Contact id='contact' />

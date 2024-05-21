@@ -13,9 +13,11 @@ import Skill from '@/components/skill';
 import Services from '@/components/services';
 import Experience from '@/components/professionalExperience';
 import Contact from '@/components/contact';
+import PhoneHeader from '@/components/phoneHeader';
  
 export default function Index() {
   const [changingLanguage, setChangingLanguage] = React.useState(true as boolean);
+  const [isPhoneType, setIsPhoneType] = React.useState(false as boolean);
   
   const t = useTranslations('index');
   
@@ -36,31 +38,50 @@ export default function Index() {
             behavior: "smooth"
         });
     };
+ 
+      React.useEffect(() => {
+        
+        if (changingLanguage) {
+        setTimeout(() => {
+            setChangingLanguage(false)
+          }, 300);
+      }
+        function handleResize() {
+          const screenWidth = window.innerWidth;
+          if (screenWidth < 1300) {
+            setIsPhoneType(true);
+          } else {
+            setIsPhoneType(false);
+          }
+        }
+    
+        window.addEventListener('resize', handleResize);
+    
+        handleResize();
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, [changingLanguage, isPhoneType]);
 
-  React.useEffect(() => {
-    if (changingLanguage) {
-      setTimeout(() => {
-          setChangingLanguage(false)
-        }, 300);
-    }
-  },[changingLanguage])
 
 
   return (
     <div className={`${changingLanguage ? styles.changing_language : styles.container}`}>
-      <Header flagFunction={() => setChangingLanguage(true) }
-       />
+      {isPhoneType ? <PhoneHeader flagFunction={() => setChangingLanguage(true) } /> : <Header flagFunction={() => setChangingLanguage(true) } />}  
       <div id='home' className={styles.home_container}>
-        <div>
+        <div className={styles.description_container}>
+          <div className={styles.name_container}>
             <p className={styles.first_name}>Lucas</p>
             <p className={styles.second_name}>Almeida</p>
+          </div>
             <h2>{t('Desenvolvedor Full-Stack')}</h2>
             <div className={styles.button_container}>
                <PrimaryButton buttonFunction={() => handleScrollToBottom()} title={'Entrar em Contato'} />
             </div>
         </div>
           <AnimatedContainer>
-          <Image width={480} height={550} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
+          <Image width={isPhoneType ? 350 : 400} height={isPhoneType ? 420 : 500} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
           </AnimatedContainer>
       </div>
         <div className={styles.habilities_container}>

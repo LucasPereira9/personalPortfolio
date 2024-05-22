@@ -30,7 +30,7 @@ export default function ResponsiveHeader(props: IHeaderProps) {
       }, []);
     
     const languages = Languages.map((item, index) => (
-        <div style={{marginRight: '10px', marginLeft: '4px'}} onClick={() => {
+        <div className={styles.language_item} onClick={() => {
              props.flagFunction()
             startTransition(() => {
                 router.replace(`/${item.value}`)
@@ -41,12 +41,15 @@ export default function ResponsiveHeader(props: IHeaderProps) {
     ));
     return (
         <div className={`${styles.container} ${scrolled ? styles.container_scrolled : ''}`}>
-            <div className={styles.languages_container}>
-                {languages}
+            <div className={`${styles.content} ${scrolled ? styles.container_scrolled : ''}`}>
+                <div className={styles.languages_container}>
+                    {languages}
+                </div>
+                <div className={styles.menu_container} onClick={toggleMenu}>
+                    {isOpen ? <FaTimes color='white' size={40} /> : <FaBars color='white' size={40} />}
+                </div> 
             </div>
-            <div onClick={toggleMenu}>
-                {isOpen ? <FaTimes color='white' size={40} /> : <FaBars color='white' size={40} />}
-            </div>
+            
         </div>
     )
 }

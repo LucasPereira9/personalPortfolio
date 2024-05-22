@@ -140,4 +140,9 @@
         margin-right: 0vh;
         margin-left: 0vh;
     }
+    .footer {
+        margin-top: 4vh;
+        align-items: flex-start;
+        text-align: center;
+    }
 }

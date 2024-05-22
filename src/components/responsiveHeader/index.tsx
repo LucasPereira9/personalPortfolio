@@ -10,12 +10,24 @@ import React from 'react';
 export default function ResponsiveHeader(props: IHeaderProps) {
     const [isPending, startTransition] = useTransition()
     const [isOpen, setIsOpen] = React.useState(false as boolean);
+    const [scrolled, setScrolled] = React.useState(false as boolean);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
     const router = useRouter()
 
+    React.useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 0;
+            setScrolled(isScrolled);
+        };
+        window.addEventListener('scroll', handleScroll);
+      
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
     
     const languages = Languages.map((item, index) => (
         <div style={{marginRight: '10px', marginLeft: '4px'}} onClick={() => {
@@ -28,7 +40,7 @@ export default function ResponsiveHeader(props: IHeaderProps) {
         </div>
     ));
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${scrolled ? styles.container_scrolled : ''}`}>
             <div className={styles.languages_container}>
                 {languages}
             </div>

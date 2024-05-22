@@ -1,15 +1,21 @@
 .container {
     align-items: center;
-    background-color: #140A48;
+    background-color: transparent;
     display: flex;
     position: fixed;
     top: 0;
     left: 0;
     justify-content: space-between;
-    border-bottom: 0.4px solid rgba(181, 182, 184, 0.384);
-    height: 8vh;
+    transition: height 0.5s ease, background-color 0.5s ease, border-bottom 0.5s ease;
+    height: 10vh;
     width: 100%;
     z-index: 5;
+}
+.container_scrolled {
+    background-color: #140A48;
+    border-bottom: 0.4px solid rgba(181, 182, 184, 0.384);
+    height: 8vh;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 .languages_container {
     align-items: center;

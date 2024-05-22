@@ -1,5 +1,5 @@
 import { Languages } from '@/utils';
-import styles from './phoneHeader.module.css'
+import styles from './responsiveHeader.module.css'
 import { useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { IHeaderProps } from '../header/header.structure';
 import React from 'react';
 
-export default function PhoneHeader(props: IHeaderProps) {
+export default function ResponsiveHeader(props: IHeaderProps) {
     const [isPending, startTransition] = useTransition()
     const [isOpen, setIsOpen] = React.useState(false as boolean);
 

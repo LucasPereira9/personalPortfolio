@@ -1,11 +1,15 @@
 .container {
     align-items: center;
     background-color: #140A48;
-    justify-content: space-between;
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
     border-bottom: 0.4px solid rgba(181, 182, 184, 0.384);
     height: 8vh;
     width: 100%;
+    z-index: 5;
 }
 .languages_container {
     align-items: center;

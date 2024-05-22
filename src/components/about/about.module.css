@@ -4,12 +4,6 @@
     margin-top: 10vh;
     justify-content: space-around;
 }
-.content_mobile {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10vh;
-}
 .about_content {
     max-width: 60vh;
 }
@@ -18,13 +12,6 @@
     font-size: 36px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-bottom: 2vh;
-}
-.about_title_mobile {
-    color: #FFFF00;
-    font-size: 36px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-bottom: 2vh;
-    text-align: center;
 }
 .about_description_mobile {
     text-align: center;
@@ -48,22 +35,11 @@
     border-width: 0px;
     border-right-width: 1px;
 }
-.complement_content_mobile {
-    border-color: #b9b9b96c;
-    border-style: solid; 
-    border-width: 0px;
-}
 .complement_item {
     margin-top: 1.5vh;
     margin-bottom: 1.5vh;
 }
 .button_container {
-    margin-top: 5vh;
-}
-.button_container_mobile {
-    align-items: center;
-    display: flex;
-    justify-content: center;
     margin-top: 5vh;
 }
 .icon_container {
@@ -108,4 +84,24 @@
     color: white;
     font-size: 28px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+@media only screen and (max-width: 1110px) {
+    .content {
+        align-items: center;
+        flex-direction: column;
+    }
+    .about_title {
+        text-align: center;
+    }
+    .complement_content {
+        border-right-width: 0px;
+    }
+    .button_container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
 }

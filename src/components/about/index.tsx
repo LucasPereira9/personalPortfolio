@@ -36,7 +36,7 @@ export default function About(props: IAboutProps) {
 
     return (
     <div id={props.id}>
-        <div className={props.isPhone ? styles.content_mobile : styles.content}>
+        <div className={styles.content}>
             <div>
                 {!props.isPhone && <div className={styles.icon_container}>
                     <AiOutlineCodepen  className={styles.icon}  />
@@ -55,10 +55,10 @@ export default function About(props: IAboutProps) {
 
             </div>
             <div className={styles.about_content}>
-                <h2 className={props.isPhone ? styles.about_title_mobile : styles.about_title}>{t('Sobre Mim')}</h2>
+                <h2 className={styles.about_title}>{t('Sobre Mim')}</h2>
                 <h3 className={props.isPhone ? styles.about_description_mobile : undefined}>{t('Como desenvolvedor, equilibro')}</h3>
                 <div className={styles.complement}>
-                    <div className={props.isPhone ? styles.complement_content_mobile : styles.complement_content}>
+                    <div className={styles.complement_content}>
                         {FirstComplements}
                         {props.isPhone && SecondComplements}
                     </div>
@@ -68,7 +68,7 @@ export default function About(props: IAboutProps) {
                     </div>
                 }
                 </div>
-                <div className={props.isPhone ? styles.button_container_mobile : styles.button_container}>
+                <div className={styles.button_container}>
                     <PrimaryButton buttonFunction={() => handleDownload()} title={'Carregar CV'} />
                 </div>
             </div>

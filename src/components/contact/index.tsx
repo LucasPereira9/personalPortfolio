@@ -74,8 +74,10 @@ export default function Contact(props: IContactProps) {
                         <Input isNumber placeHolder='Seu Telefone' value={formData.phone}  setValue={setFormData} fieldName="phone" />
                         <Input placeHolder='Assunto' value={formData.subject}  setValue={setFormData} fieldName="subject"  />
                     </div>
+                    <div className={styles.button_container}>    
                         <Input isMessageType placeHolder='Escreva sua mensagem' value={formData.message}  setValue={setFormData} fieldName="message"  />
                         <PrimaryButton isDisabled={isDisabled} isLoading={isLoading} title='Enviar' buttonFunction={ () => handleSubmit()} />
+                    </div>
                 </div>
             </div>
         </div>

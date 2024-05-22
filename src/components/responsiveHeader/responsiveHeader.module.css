@@ -1,0 +1,37 @@
+.container {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: height 0.5s ease, background-color 0.5s ease, border-bottom 0.5s ease;
+    height: 10vh;
+    width: 100%;
+    z-index: 5;
+}
+.container_scrolled {
+    background-color: #140A48;
+    height: 8vh;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+.content {
+    align-items: center;
+    display: flex;
+    height: 10vh;
+    transition: height 0.5s ease;
+    justify-content: space-between;
+}
+
+.content_scrolled {
+    height: 8vh;
+}
+.languages_container {
+    align-items: center;
+    display: flex;
+}
+.language_item {
+    margin-left: 6px;
+    margin-right: 10px;
+}
+.menu_container {
+    padding-right: 2vh;
+}

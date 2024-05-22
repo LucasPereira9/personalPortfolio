@@ -13,7 +13,7 @@ import Skill from '@/components/skill';
 import Services from '@/components/services';
 import Experience from '@/components/professionalExperience';
 import Contact from '@/components/contact';
-import PhoneHeader from '@/components/phoneHeader';
+import ResponsiveHeader from '@/components/responsiveHeader';
  
 export default function Index() {
   const [changingLanguage, setChangingLanguage] = React.useState(true as boolean);
@@ -71,7 +71,7 @@ export default function Index() {
 
   return (
     <div className={`${changingLanguage ? styles.changing_language : styles.container}`}>
-      {isPhoneType ? <PhoneHeader flagFunction={() => setChangingLanguage(true) } /> : <Header flagFunction={() => setChangingLanguage(true) } />}  
+      {isPhoneType ? <ResponsiveHeader flagFunction={() => setChangingLanguage(true) } /> : <Header flagFunction={() => setChangingLanguage(true) } />}  
       <div id='home' className={styles.home_container}>
         <div className={styles.description_container}>
           <div className={styles.name_container}>

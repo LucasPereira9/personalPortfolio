@@ -31,5 +31,6 @@
         width: 40vh;
         min-height: 52vh;
         overflow: auto;
+        padding: 3vh;
     }
 }

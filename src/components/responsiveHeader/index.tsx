@@ -41,7 +41,7 @@ export default function ResponsiveHeader(props: IHeaderProps) {
     ));
     return (
         <div className={`${styles.container} ${scrolled ? styles.container_scrolled : ''}`}>
-            <div className={`${styles.content} ${scrolled ? styles.container_scrolled : ''}`}>
+            <div className={`${styles.content} ${scrolled ? styles.content_scrolled : ''}`}>
                 <div className={styles.languages_container}>
                     {languages}
                 </div>

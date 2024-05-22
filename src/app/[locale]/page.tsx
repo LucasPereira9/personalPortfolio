@@ -22,9 +22,12 @@ export default function Index() {
   const t = useTranslations('index');
   
       const AbilitiesOptions = Abilities.map((item, index) => (
-          <AnimatedContainer key={index}> 
+        <div key={index}>
+          <AnimatedContainer> 
             <Ability icon={item.icon} title={item.title} description={item.description} />
           </AnimatedContainer>
+        </div>
+          
       ));
       const SkillsOptions = Skills.map((item, index) => (
           <div key={index}> 
@@ -91,7 +94,7 @@ export default function Index() {
         <div className={styles.about_title_content}>
           <h2 className={styles.about_subtitle}>{t('Um apaixonado por código')}</h2>
         </div>
-       <About id='about' />
+       <About isPhone={isPhoneType} id='about' />
       </div>
       <div className={styles.skills_container}>
             <h1 className={styles.title}>{t('HABILIDADES')}</h1>
@@ -105,8 +108,6 @@ export default function Index() {
       </div>
       <div className={styles.personal_info_container}>
         <Experience id='experience' />
-        <div>
-        </div>
       </div>
       <div className={styles.personal_info_container}>
         <Contact id='contact' />

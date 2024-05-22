@@ -162,7 +162,7 @@ export const StudyHistory = [
     },
     {
         title: 'React Native',
-        date: '(2020 - 2020)',
+        date: '(2020)',
         company: 'RocketSeat',
         description: 'Curso prático voltado para o desenvolvimento de aplicativos móveis usando React Native, incluindo navegação, componentes nativos e integração com APIs externas'
     },

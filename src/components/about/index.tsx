@@ -37,27 +37,36 @@ export default function About(props: IAboutProps) {
     return (
     <div id={props.id}>
         <div className={styles.content}>
-            <div className={styles.icon_container}>
-                <AiOutlineCodepen  className={styles.icon}  />
-            </div>
-            <AnimatedContainer>
-                <Image width={720} height={680} src={'/assets/images/working.png'} alt={'working'} />
-            </AnimatedContainer>
-            <div className={styles.experience_container}>
-                <div className={styles.separator} />
-                <h1 className={styles.experience_year}>4</h1>
-                <h1 className={styles.experience_text}>{t('Anos de Experiência')}</h1>
+            <div>
+                {!props.isPhone && <div className={styles.icon_container}>
+                    <AiOutlineCodepen  className={styles.icon}  />
+                </div>
+                }
+                <AnimatedContainer>
+                    <Image width={props.isPhone ? 340 : 720} height={props.isPhone ? 360 : 680} src={'/assets/images/working.png'} alt={'working'} />
+                </AnimatedContainer>
+                {!props.isPhone && 
+                    <div className={styles.experience}>
+                        <div className={styles.separator} />
+                        <h1 className={styles.experience_year}>4</h1>
+                        <h1 className={styles.experience_text}>{t('Anos de Experiência')}</h1>
+                    </div>
+                }
+
             </div>
             <div className={styles.about_content}>
                 <h2 className={styles.about_title}>{t('Sobre Mim')}</h2>
-                <h3>{t('Como desenvolvedor, equilibro')}</h3>
+                <h3 className={props.isPhone ? styles.about_description_mobile : undefined}>{t('Como desenvolvedor, equilibro')}</h3>
                 <div className={styles.complement}>
-                    <div className={styles.first_complement_content}>
-                    {FirstComplements}
+                    <div className={styles.complement_content}>
+                        {FirstComplements}
+                        {props.isPhone && SecondComplements}
                     </div>
-                    <div className={styles.first_complement_content}>
-                        {SecondComplements}
+                  {!props.isPhone &&
+                    <div className={styles.complement_content}>
+                     {SecondComplements}
                     </div>
+                }
                 </div>
                 <div className={styles.button_container}>
                     <PrimaryButton buttonFunction={() => handleDownload()} title={'Carregar CV'} />

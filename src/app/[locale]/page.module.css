@@ -9,7 +9,6 @@
 .personal_info_container {
     align-items: center;
     display: flex;
-    flex-direction: row;
     justify-content: center;
 }
 .home_container {
@@ -131,5 +130,19 @@
     }
     .description_container {
         align-items: center;
+    }
+    .habilities_container {
+        align-items: center;
+        flex-direction: column;
+    }
+    .skills_content {
+        flex-direction: column;
+        margin-right: 0vh;
+        margin-left: 0vh;
+    }
+    .footer {
+        margin-top: 4vh;
+        align-items: flex-start;
+        text-align: center;
     }
 }

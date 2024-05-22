@@ -1,17 +1,18 @@
 .container {
     background-color: #412da8;
     border-radius: 2vh;
-    width: 50vh;
-    height: 50vh;
+    width: 46vh;
+    height: 48vh;
+    padding: 6vh;
+    box-sizing: border-box;
 }
-.content {
-    padding: 6vh
-}
+
 .icon {
     color: #FFFF00;
     height: 8vh;
     width: 8vh;
 }
+
 .title {
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -19,7 +20,16 @@
     padding-top: 4vh;
     padding-bottom: 2vh; 
 }
+
 .subtitle {
     font-size: 22px;
     color: rgba(230, 232, 235, 0.562);
+}
+
+@media only screen and (max-width: 1110px) {
+    .container {
+        width: 40vh;
+        min-height: 52vh;
+        overflow: auto;
+    }
 }

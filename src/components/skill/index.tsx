@@ -6,6 +6,7 @@ import { ISkillProps } from './skill.structure';
 
 const Skill = (props: ISkillProps) => {
     const { ref, inView } = useInView({ triggerOnce: false });
+    const [isPhoneType, setIsPhoneType] = React.useState(false as boolean);
 
     
     const springProps = useSpring({
@@ -15,7 +16,7 @@ const Skill = (props: ISkillProps) => {
     });
     const percentageStyle = useSpring({
         textAlign: inView ? 'right' : 'left',
-        width: inView ? '60vh' : '0vh',
+        width: inView ? (isPhoneType ? '40vh' : '60vh') : '0vh',
         from: { textAlign: 'left', width: '0vh' },
         config: { duration: 2000 }
       });
@@ -25,6 +26,25 @@ const Skill = (props: ISkillProps) => {
           config: { duration: 1200 }
         });
 
+        React.useEffect(() => {
+          function handleResize() {
+            const screenWidth = window.innerWidth;
+            if (screenWidth < 1300) {
+              setIsPhoneType(true);
+            } else {
+              setIsPhoneType(false);
+            }
+          }
+      
+          window.addEventListener('resize', handleResize);
+      
+          handleResize();
+      
+          return () => {
+            window.removeEventListener('resize', handleResize);
+          };
+        }, [isPhoneType]);
+
   return (
     <div className={styles.skill} ref={ref}>
         <animated.div style={titleStyle}>
@@ -33,7 +53,7 @@ const Skill = (props: ISkillProps) => {
         <animated.div className={styles.percentage} style={percentageStyle}>      
             <h3 className={styles.percentage_number}>{props.level}%</h3>
         </animated.div>
-        <div className={styles.skill_bar}>
+        <div style={{width: isPhoneType ? '40vh' : ''}} className={styles.skill_bar}>
             <animated.div className={styles.skill_level} style={springProps}></animated.div>
         </div>
     </div>

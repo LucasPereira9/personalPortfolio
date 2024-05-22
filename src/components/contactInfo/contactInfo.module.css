@@ -31,3 +31,20 @@
     color: rgba(156, 154, 154, 0.788);
     font-size: 20px;
 }
+
+@media only screen and (max-width: 1110px) {
+    .container {
+        margin-bottom: 6vh;
+    }
+    .icon_content {
+        height: 7vh;
+        min-width: 7vh;
+    }
+    .icon {
+        height: 3vh;
+        width: 3vh;
+    }
+    .title {
+        font-size: 24px;
+    }
+}

@@ -36,3 +36,10 @@
   border-color: #FFFF00;
   outline: none;
 }
+
+
+@media only screen and (max-width: 1110px) {
+  .message_input {
+    width: 38vh;
+  }
+}

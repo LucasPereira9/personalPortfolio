@@ -35,3 +35,10 @@
 .menu_container {
     padding-right: 2vh;
 }
+.navigation_item {
+    border: none;
+    border-bottom: 0.3px solid rgba(240, 248, 255, 0.192);
+    margin: 2vh;
+    padding-bottom: 8px;
+    
+}

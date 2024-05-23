@@ -14,12 +14,20 @@ import Services from '@/components/services';
 import Experience from '@/components/professionalExperience';
 import Contact from '@/components/contact';
 import ResponsiveHeader from '@/components/responsiveHeader';
+import { useInView } from 'react-intersection-observer';
+import { useSpring, animated } from 'react-spring';
  
-export default function Index() {
+export default function Index() { 
+  const { ref, inView } = useInView({triggerOnce: true });
+  const t = useTranslations('index');
   const [changingLanguage, setChangingLanguage] = React.useState(true as boolean);
   const [isPhoneType, setIsPhoneType] = React.useState(false as boolean);
-  
-  const t = useTranslations('index');
+
+  const fadeAbility = useSpring({
+    opacity: inView ? 1 : 0,
+    from: { opacity: 0 },
+    config: { duration: 2000 }
+  });
   
       const AbilitiesOptions = Abilities.map((item, index) => (
         <div key={index}>
@@ -27,7 +35,6 @@ export default function Index() {
             <Ability icon={item.icon} title={item.title} description={item.description} />
           </AnimatedContainer>
         </div>
-          
       ));
       const SkillsOptions = Skills.map((item, index) => (
           <div key={index}> 
@@ -87,9 +94,9 @@ export default function Index() {
           <Image width={isPhoneType ? 350 : 400} height={isPhoneType ? 420 : 500} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
           </AnimatedContainer>
       </div>
-        <div className={styles.habilities_container}>
+        <animated.div ref={ref}  style={fadeAbility} className={styles.habilities_container}>
               {AbilitiesOptions}
-        </div>
+        </animated.div>
       <div className={styles.about_container}>
         <div className={styles.about_title_content}>
           <h2 className={styles.about_subtitle}>{t('Um apaixonado por código')}</h2>

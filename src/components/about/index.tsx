@@ -6,9 +6,26 @@ import Image from 'next/image';
 import AnimatedContainer from '../animatedContainer';
 import { AiOutlineCodepen   } from 'react-icons/ai';
 import { useTranslations } from 'next-intl';
+import { useInView } from 'react-intersection-observer';
+import { useSpring, animated } from 'react-spring';
 
 export default function About(props: IAboutProps) {
     const t = useTranslations('index');
+    const [refLeft, inViewLeft] = useInView({triggerOnce: false});
+    const [refRight, inViewRight] = useInView({triggerOnce: false});
+
+    const leftContainerProps = useSpring({
+        opacity: inViewLeft ? 1 : 0,
+        transform: inViewLeft ? 'translateX(0px)' : 'translateX(-15px)',
+        from: { opacity: 0, transform: 'translateX(-15px)' },
+        config: { duration: 1000 },
+      });
+    const rightContainerProps = useSpring({
+        opacity: inViewRight ? 1 : 0,
+        transform: inViewRight ? 'translateX(0px)' : 'translateX(50px)',
+        from: { opacity: 0, transform: 'translateX(50px)' },
+        config: { duration: 1000 },
+      });
 
     const FirstComplements = firstComplement.map((item, index) => (
         <div key={index}> 
@@ -37,7 +54,7 @@ export default function About(props: IAboutProps) {
     return (
     <div id={props.id}>
         <div className={styles.content}>
-            <div>
+            <animated.div ref={refLeft} style={leftContainerProps}>
                 {!props.isPhone && <div className={styles.icon_container}>
                     <AiOutlineCodepen  className={styles.icon}  />
                 </div>
@@ -53,8 +70,8 @@ export default function About(props: IAboutProps) {
                     </div>
                 }
 
-            </div>
-            <div className={styles.about_content}>
+            </animated.div>
+            <animated.div ref={refRight} style={rightContainerProps} className={styles.about_content}>
                 <h2 className={styles.about_title}>{t('Sobre Mim')}</h2>
                 <h3 className={props.isPhone ? styles.about_description_mobile : undefined}>{t('Como desenvolvedor, equilibro')}</h3>
                 <div className={styles.complement}>
@@ -71,7 +88,7 @@ export default function About(props: IAboutProps) {
                 <div className={styles.button_container}>
                     <PrimaryButton buttonFunction={() => handleDownload()} title={'Carregar CV'} />
                 </div>
-            </div>
+            </animated.div>
         </div>
     </div>
     )

@@ -14,7 +14,6 @@
 .home_container {
     align-items: center;
     display: flex;
-    /* height: 70vh; */
     flex-direction: row;
     justify-content: space-around;
     margin-top: 16vh;

@@ -7,13 +7,31 @@ import React from 'react';
 import PrimaryButton from '../primaryButton';
 import emailjs from 'emailjs-com';
 import { useTranslations } from 'next-intl';
+import { useInView } from 'react-intersection-observer';
+import { useSpring, animated } from 'react-spring';
 
 
 export default function Contact(props: IContactProps) {
+    const t = useTranslations('index');
     const [formData, setFormData] = React.useState<IFormDataProps>({ name: '', email: '', phone: '', subject: '', message: '' });
     const [isLoading, setIsLoading] =  React.useState(false as boolean)
     const [isDisabled, setIsDisabled] =  React.useState(true as boolean)
-    const t = useTranslations('index');
+    const [refLeft, inViewLeft] = useInView({triggerOnce: false});
+    const [refRight, inViewRight] = useInView({triggerOnce: false});
+
+    const leftContainerProps = useSpring({
+        opacity: inViewLeft ? 1 : 0,
+        transform: inViewLeft ? 'translateX(0px)' : 'translateX(-15px)',
+        from: { opacity: 0, transform: 'translateX(-15px)' },
+        config: { duration: 1000 },
+      });
+    const rightContainerProps = useSpring({
+        opacity: inViewRight ? 1 : 0,
+        transform: inViewRight ? 'translateX(0px)' : 'translateX(50px)',
+        from: { opacity: 0, transform: 'translateX(50px)' },
+        config: { duration: 1000 },
+      });
+
 
 
     const ContactOptions = ContactData.map((item, index) => (
@@ -62,10 +80,10 @@ export default function Contact(props: IContactProps) {
                 <h3 className={styles.subtitle}>{t('Queremos ouvir de você')}</h3>
             </div>
             <div className={styles.content}>
-                <div>
+                <animated.div ref={refLeft} style={leftContainerProps}>
                     {ContactOptions}
-                </div>
-                <div>
+                </animated.div>
+                <animated.div ref={refRight} style={rightContainerProps}>
                     <div className={styles.inputs_container}>
                         <Input placeHolder='Seu nome' value={formData.name}  setValue={setFormData} fieldName="name" />
                         <Input placeHolder='Seu Email' value={formData.email}  setValue={setFormData} fieldName="email"  />
@@ -78,7 +96,7 @@ export default function Contact(props: IContactProps) {
                         <Input isMessageType placeHolder='Escreva sua mensagem' value={formData.message}  setValue={setFormData} fieldName="message"  />
                         <PrimaryButton isDisabled={isDisabled} isLoading={isLoading} title='Enviar' buttonFunction={ () => handleSubmit()} />
                     </div>
-                </div>
+                </animated.div>
             </div>
         </div>
     )

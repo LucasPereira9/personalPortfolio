@@ -9,6 +9,7 @@ import emailjs from 'emailjs-com';
 import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
 import { useSpring, animated } from 'react-spring';
+import Modal from '../modal';
 
 
 export default function Contact(props: IContactProps) {
@@ -18,6 +19,8 @@ export default function Contact(props: IContactProps) {
     const [isDisabled, setIsDisabled] =  React.useState(true as boolean)
     const [refLeft, inViewLeft] = useInView({triggerOnce: false});
     const [refRight, inViewRight] = useInView({triggerOnce: false});
+    const [isModalOpen, setIsModalOpen] =  React.useState(true as boolean)
+
 
     const leftContainerProps = useSpring({
         opacity: inViewLeft ? 1 : 0,
@@ -50,7 +53,7 @@ export default function Contact(props: IContactProps) {
         message: formData.message
       }
       emailjs.send('service_pvcsxgo', 'template_b9qwfma', templateParams, 'iqqP0JO7raz8NTLu5')
-      .then((response) => {
+      .then(() => {
         setFormData({
             name: '',
             email: '',
@@ -59,7 +62,7 @@ export default function Contact(props: IContactProps) {
             message: ''
           });
           setIsLoading(false)
-        console.log('Email sent successfully!', response);
+          setIsModalOpen(true)
       })
       .catch((error) => {
         setIsLoading(false)
@@ -98,6 +101,12 @@ export default function Contact(props: IContactProps) {
                     </div>
                 </animated.div>
             </div>
+            <Modal setIsModalOpen={() => setIsModalOpen(!isModalOpen) } isModalOpen={isModalOpen}>
+              <div style={{ backgroundColor: 'blue', width: '80vh', height: '40vh'}}>
+              <h3>test</h3>
+              
+              </div>
+            </Modal>
         </div>
     )
 }

@@ -19,7 +19,7 @@ export default function Contact(props: IContactProps) {
     const [formData, setFormData] = React.useState<IFormDataProps>({ name: '', email: '', phone: '', subject: '', message: '' });
     const [isLoading, setIsLoading] =  React.useState(false as boolean)
     const [isDisabled, setIsDisabled] =  React.useState(true as boolean)
-    const [errorSendingEmail, setErrorSendingEmail] =  React.useState(false as boolean)
+    const [errorSendingEmail, setErrorSendingEmail] =  React.useState(true as boolean)
     const [isModalOpen, setIsModalOpen] =  React.useState(false as boolean)
     const [isPhoneType, setIsPhoneType] = React.useState(false as boolean);
 
@@ -120,7 +120,7 @@ export default function Contact(props: IContactProps) {
                     </div>
                     <div className={styles.button_container}>    
                         <Input isMessageType placeHolder='Escreva sua mensagem' value={formData.message}  setValue={setFormData} fieldName="message"  />
-                        {errorSendingEmail &&  <h3 className={styles.error_message}>Erro ao entrar em contato. Tente novamente mais tarde.</h3>}
+                        {errorSendingEmail &&  <h3 className={styles.error_message}>{t('Erro ao entrar em contato')}</h3>}
                        
                         <PrimaryButton isDisabled={isDisabled} isLoading={isLoading} title='Enviar' buttonFunction={ () => handleSubmit()} />
                     </div>
@@ -131,7 +131,7 @@ export default function Contact(props: IContactProps) {
                 <div className={styles.lottie_container}>
                   <LottieAnimation animationPath="/assets/lottie/letterSend.json" />
                 </div>
-                  <h3 style={{fontSize: '22px', textAlign: 'center'}} className={styles.subtitle}>Agradecemos seu contato. Responderemos o mais rápido possível!</h3>
+                  <h3 style={{fontSize: '22px', textAlign: 'center'}} className={styles.subtitle}>{t('Agradecemos seu contato')}</h3>
                   <div>
                     <PrimaryButton title='Concluído' buttonFunction={() => setIsModalOpen(false)} />
                   </div>

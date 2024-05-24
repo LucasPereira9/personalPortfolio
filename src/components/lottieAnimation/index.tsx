@@ -15,7 +15,7 @@ export default function LottieAnimation({ animationPath }) {
   }, [animationPath]);
 
   if (!animationData) {
-    return <div>Loading...</div>;
+    return <h3>...</h3>;
   }
 
   return <Lottie animationData={animationData} loop={false} />;

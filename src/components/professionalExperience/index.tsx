@@ -25,12 +25,12 @@ export default function Experience(props: IProfessionalExpProps) {
     
     const Works = WorkedCompanyes.map((item, index) => (
         <div key={index}>
-            <ExperienceItem title={item.title} date={item.date} company={item.company} description={item.description} />
+            <ExperienceItem icon={item.icon} title={item.title} date={item.date} company={item.company} description={item.description} />
         </div>
     ));
     const Study = StudyHistory.map((item, index) => (
         <div key={index}>
-            <ExperienceItem title={item.title} date={item.date} company={item.company} description={item.description} />
+            <ExperienceItem icon={item.icon} title={item.title} date={item.date} company={item.company} description={item.description} />
         </div>
     ));
 

@@ -1,7 +1,7 @@
 import styles from './experienceItem.module.css'
-import { FaAppStore } from 'react-icons/fa';
 import { IExpItemProps } from './experienceItem.structure';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 export default function ExperienceItem(props: IExpItemProps) {
     const t = useTranslations('index');
@@ -9,7 +9,7 @@ export default function ExperienceItem(props: IExpItemProps) {
     return (
         <div className={styles.container}>
             <div className={styles.icon_content}>
-            <FaAppStore className={styles.icon} />
+            <Image width={80} height={80} src={props.icon} className={styles.icon} alt={'icon'} />
             <div className={styles.separator} />
             </div>
             <div>

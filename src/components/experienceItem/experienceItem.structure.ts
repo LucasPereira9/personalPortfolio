@@ -3,4 +3,5 @@ export interface IExpItemProps {
     date: string
     company: string
     description: string
+    icon: string
 }

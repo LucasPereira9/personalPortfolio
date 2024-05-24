@@ -8,10 +8,8 @@
 }
 .icon {
     background-color: #FFFF00;
-    padding: 1vh;
+    padding: 2vh;
     border-radius: 10vh;
-    height: 8vh;
-    width: 8vh;
 }
 .separator {
     border-left-width: 2px;

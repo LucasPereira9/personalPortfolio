@@ -9,28 +9,37 @@ import emailjs from 'emailjs-com';
 import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
 import { useSpring, animated } from 'react-spring';
+import Modal from '../modal';
+import LottieAnimation from '../lottieAnimation';
 
 
 export default function Contact(props: IContactProps) {
     const t = useTranslations('index');
+    
     const [formData, setFormData] = React.useState<IFormDataProps>({ name: '', email: '', phone: '', subject: '', message: '' });
     const [isLoading, setIsLoading] =  React.useState(false as boolean)
     const [isDisabled, setIsDisabled] =  React.useState(true as boolean)
+    const [errorSendingEmail, setErrorSendingEmail] =  React.useState(false as boolean)
+    const [isModalOpen, setIsModalOpen] =  React.useState(false as boolean)
+    const [isPhoneType, setIsPhoneType] = React.useState(false as boolean);
+
     const [refLeft, inViewLeft] = useInView({triggerOnce: false});
     const [refRight, inViewRight] = useInView({triggerOnce: false});
 
+
     const leftContainerProps = useSpring({
-        opacity: inViewLeft ? 1 : 0,
-        transform: inViewLeft ? 'translateX(0px)' : 'translateX(-15px)',
-        from: { opacity: 0, transform: 'translateX(-15px)' },
-        config: { duration: 1000 },
-      });
+      opacity: inViewLeft ? 1 : 0,
+      transform: isPhoneType ? undefined : (inViewLeft ? 'translateX(0px)' : 'translateX(-15px)'),
+      from: { opacity: 0, transform: isPhoneType ? undefined : 'translateX(-15px)' },
+      config: { duration: 1000 },
+    });
+    
     const rightContainerProps = useSpring({
-        opacity: inViewRight ? 1 : 0,
-        transform: inViewRight ? 'translateX(0px)' : 'translateX(50px)',
-        from: { opacity: 0, transform: 'translateX(50px)' },
-        config: { duration: 1000 },
-      });
+      opacity: inViewRight ? 1 : 0,
+      transform: isPhoneType ? undefined : (inViewRight ? 'translateX(0px)' : 'translateX(50px)'),
+      from: { opacity: 0, transform: isPhoneType ? undefined : 'translateX(50px)' },
+      config: { duration: 1000 },
+    });
 
 
 
@@ -50,7 +59,7 @@ export default function Contact(props: IContactProps) {
         message: formData.message
       }
       emailjs.send('service_pvcsxgo', 'template_b9qwfma', templateParams, 'iqqP0JO7raz8NTLu5')
-      .then((response) => {
+      .then(() => {
         setFormData({
             name: '',
             email: '',
@@ -59,17 +68,34 @@ export default function Contact(props: IContactProps) {
             message: ''
           });
           setIsLoading(false)
-        console.log('Email sent successfully!', response);
+          setIsModalOpen(true)
       })
-      .catch((error) => {
+      .catch(() => {
         setIsLoading(false)
-        console.error('Email failed to send:', error);
+        setErrorSendingEmail(true)
       });
     };
 
     React.useEffect(() => {
         const allFieldsFilled = Object.values(formData).every(value => value.trim() !== '');
         setIsDisabled(!allFieldsFilled)
+
+        function handleResize() {
+          const screenWidth = window.innerWidth;
+          if (screenWidth < 1300) {
+            setIsPhoneType(true);
+          } else {
+            setIsPhoneType(false);
+          }
+        }
+
+        window.addEventListener('resize', handleResize);
+  
+      handleResize();
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
     }, [formData]);
 
 
@@ -94,10 +120,23 @@ export default function Contact(props: IContactProps) {
                     </div>
                     <div className={styles.button_container}>    
                         <Input isMessageType placeHolder='Escreva sua mensagem' value={formData.message}  setValue={setFormData} fieldName="message"  />
+                        {errorSendingEmail &&  <h3 className={styles.error_message}>{t('Erro ao entrar em contato')}</h3>}
+                       
                         <PrimaryButton isDisabled={isDisabled} isLoading={isLoading} title='Enviar' buttonFunction={ () => handleSubmit()} />
                     </div>
                 </animated.div>
             </div>
+            <Modal setIsModalOpen={() => setIsModalOpen(false)} isModalOpen={isModalOpen}>
+              <div className={styles.modal_container}>
+                <div className={styles.lottie_container}>
+                  <LottieAnimation animationPath="/assets/lottie/letterSend.json" />
+                </div>
+                  <h3 style={{fontSize: '22px', textAlign: 'center'}} className={styles.subtitle}>{t('Agradecemos seu contato')}</h3>
+                  <div>
+                    <PrimaryButton title='Concluído' buttonFunction={() => setIsModalOpen(false)} />
+                  </div>
+              </div>
+            </Modal>
         </div>
     )
 }

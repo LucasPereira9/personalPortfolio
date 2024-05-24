@@ -14,16 +14,14 @@ export default function About(props: IAboutProps) {
     const [refLeft, inViewLeft] = useInView({triggerOnce: false});
     const [refRight, inViewRight] = useInView({triggerOnce: false});
 
-    const leftContainerProps = useSpring({
+   const leftContainerProps = useSpring({
         opacity: inViewLeft ? 1 : 0,
-        transform: inViewLeft ? 'translateX(0px)' : 'translateX(-15px)',
-        from: { opacity: 0, transform: 'translateX(-15px)' },
+        from: { opacity: 0},
         config: { duration: 1000 },
       });
     const rightContainerProps = useSpring({
         opacity: inViewRight ? 1 : 0,
-        transform: inViewRight ? 'translateX(0px)' : 'translateX(50px)',
-        from: { opacity: 0, transform: 'translateX(50px)' },
+        from: { opacity: 0 },
         config: { duration: 1000 },
       });
 

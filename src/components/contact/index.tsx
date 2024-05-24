@@ -21,21 +21,25 @@ export default function Contact(props: IContactProps) {
     const [isDisabled, setIsDisabled] =  React.useState(true as boolean)
     const [errorSendingEmail, setErrorSendingEmail] =  React.useState(false as boolean)
     const [isModalOpen, setIsModalOpen] =  React.useState(false as boolean)
+    const [isPhoneType, setIsPhoneType] = React.useState(false as boolean);
 
     const [refLeft, inViewLeft] = useInView({triggerOnce: false});
     const [refRight, inViewRight] = useInView({triggerOnce: false});
 
 
     const leftContainerProps = useSpring({
-        opacity: inViewLeft ? 1 : 0,
-        from: { opacity: 0},
-        config: { duration: 1000 },
-      });
+      opacity: inViewLeft ? 1 : 0,
+      transform: isPhoneType ? undefined : (inViewLeft ? 'translateX(0px)' : 'translateX(-15px)'),
+      from: { opacity: 0, transform: isPhoneType ? undefined : 'translateX(-15px)' },
+      config: { duration: 1000 },
+    });
+    
     const rightContainerProps = useSpring({
-        opacity: inViewRight ? 1 : 0,
-        from: { opacity: 0 },
-        config: { duration: 1000 },
-      });
+      opacity: inViewRight ? 1 : 0,
+      transform: isPhoneType ? undefined : (inViewRight ? 'translateX(0px)' : 'translateX(50px)'),
+      from: { opacity: 0, transform: isPhoneType ? undefined : 'translateX(50px)' },
+      config: { duration: 1000 },
+    });
 
 
 
@@ -75,6 +79,23 @@ export default function Contact(props: IContactProps) {
     React.useEffect(() => {
         const allFieldsFilled = Object.values(formData).every(value => value.trim() !== '');
         setIsDisabled(!allFieldsFilled)
+
+        function handleResize() {
+          const screenWidth = window.innerWidth;
+          if (screenWidth < 1300) {
+            setIsPhoneType(true);
+          } else {
+            setIsPhoneType(false);
+          }
+        }
+
+        window.addEventListener('resize', handleResize);
+  
+      handleResize();
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
     }, [formData]);
 
 

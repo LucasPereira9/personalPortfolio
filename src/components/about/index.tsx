@@ -14,9 +14,9 @@ export default function About(props: IAboutProps) {
     const [refLeft, inViewLeft] = useInView({triggerOnce: false});
     const [refRight, inViewRight] = useInView({triggerOnce: false});
 
-    const leftContainerProps = useSpring({
+   const leftContainerProps = useSpring({
         opacity: inViewLeft ? 1 : 0,
-        from: { opacity: 0 },
+        from: { opacity: 0},
         config: { duration: 1000 },
       });
     const rightContainerProps = useSpring({

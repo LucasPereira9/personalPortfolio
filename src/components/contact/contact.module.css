@@ -29,6 +29,23 @@
     display: flex;
     flex-direction: column;
 }
+.modal_container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50vh;
+    width: 80vh;
+}
+.lottie_container {
+    height: 15vh;
+    width: 15vh;
+    margin-bottom: 6vh;
+}
+.error_message {
+    color: rgba(211, 54, 54, 0.829);
+    margin: 1vh
+}
 
 @media only screen and (max-width: 1110px) {
     .subtitle {

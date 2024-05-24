@@ -10,28 +10,30 @@ import { useTranslations } from 'next-intl';
 import { useInView } from 'react-intersection-observer';
 import { useSpring, animated } from 'react-spring';
 import Modal from '../modal';
+import LottieAnimation from '../lottieAnimation';
 
 
 export default function Contact(props: IContactProps) {
     const t = useTranslations('index');
+    
     const [formData, setFormData] = React.useState<IFormDataProps>({ name: '', email: '', phone: '', subject: '', message: '' });
     const [isLoading, setIsLoading] =  React.useState(false as boolean)
     const [isDisabled, setIsDisabled] =  React.useState(true as boolean)
+    const [errorSendingEmail, setErrorSendingEmail] =  React.useState(false as boolean)
+    const [isModalOpen, setIsModalOpen] =  React.useState(false as boolean)
+
     const [refLeft, inViewLeft] = useInView({triggerOnce: false});
     const [refRight, inViewRight] = useInView({triggerOnce: false});
-    const [isModalOpen, setIsModalOpen] =  React.useState(true as boolean)
 
 
     const leftContainerProps = useSpring({
         opacity: inViewLeft ? 1 : 0,
-        transform: inViewLeft ? 'translateX(0px)' : 'translateX(-15px)',
-        from: { opacity: 0, transform: 'translateX(-15px)' },
+        from: { opacity: 0},
         config: { duration: 1000 },
       });
     const rightContainerProps = useSpring({
         opacity: inViewRight ? 1 : 0,
-        transform: inViewRight ? 'translateX(0px)' : 'translateX(50px)',
-        from: { opacity: 0, transform: 'translateX(50px)' },
+        from: { opacity: 0 },
         config: { duration: 1000 },
       });
 
@@ -64,9 +66,9 @@ export default function Contact(props: IContactProps) {
           setIsLoading(false)
           setIsModalOpen(true)
       })
-      .catch((error) => {
+      .catch(() => {
         setIsLoading(false)
-        console.error('Email failed to send:', error);
+        setErrorSendingEmail(true)
       });
     };
 
@@ -97,14 +99,21 @@ export default function Contact(props: IContactProps) {
                     </div>
                     <div className={styles.button_container}>    
                         <Input isMessageType placeHolder='Escreva sua mensagem' value={formData.message}  setValue={setFormData} fieldName="message"  />
+                        {errorSendingEmail &&  <h3 className={styles.error_message}>Erro ao entrar em contato. Tente novamente mais tarde.</h3>}
+                       
                         <PrimaryButton isDisabled={isDisabled} isLoading={isLoading} title='Enviar' buttonFunction={ () => handleSubmit()} />
                     </div>
                 </animated.div>
             </div>
-            <Modal setIsModalOpen={() => setIsModalOpen(!isModalOpen) } isModalOpen={isModalOpen}>
-              <div style={{ backgroundColor: 'blue', width: '80vh', height: '40vh'}}>
-              <h3>test</h3>
-              
+            <Modal setIsModalOpen={() => setIsModalOpen(false)} isModalOpen={isModalOpen}>
+              <div className={styles.modal_container}>
+                <div className={styles.lottie_container}>
+                  <LottieAnimation animationPath="/assets/lottie/letterSend.json" />
+                </div>
+                  <h3 style={{fontSize: '22px', textAlign: 'center'}} className={styles.subtitle}>Agradecemos seu contato. Responderemos o mais rápido possível!</h3>
+                  <div>
+                    <PrimaryButton title='Concluído' buttonFunction={() => setIsModalOpen(false)} />
+                  </div>
               </div>
             </Modal>
         </div>

@@ -16,7 +16,6 @@ const Modal = (props:IModalProps) => {
   return (
     <div className={styles.backdrop} onClick={props.setIsModalOpen}>
       <animated.div style={animation} className={styles.modal} onClick={e => e.stopPropagation()}>
-        <button className={styles.closeButton} onClick={props.setIsModalOpen}>X</button>
         {props.children}
       </animated.div>
     </div>

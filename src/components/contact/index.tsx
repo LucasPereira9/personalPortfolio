@@ -19,7 +19,7 @@ export default function Contact(props: IContactProps) {
     const [formData, setFormData] = React.useState<IFormDataProps>({ name: '', email: '', phone: '', subject: '', message: '' });
     const [isLoading, setIsLoading] =  React.useState(false as boolean)
     const [isDisabled, setIsDisabled] =  React.useState(true as boolean)
-    const [errorSendingEmail, setErrorSendingEmail] =  React.useState(true as boolean)
+    const [errorSendingEmail, setErrorSendingEmail] =  React.useState(false as boolean)
     const [isModalOpen, setIsModalOpen] =  React.useState(false as boolean)
     const [isPhoneType, setIsPhoneType] = React.useState(false as boolean);
 

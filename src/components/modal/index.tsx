@@ -1,5 +1,5 @@
 import { useSpring, animated } from '@react-spring/web';
-import styles from './Modal.module.css';
+import styles from './modal.module.css'
 import { IModalProps } from './modal.structure';
 
 const Modal = (props:IModalProps) => {

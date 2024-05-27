@@ -54,12 +54,13 @@ export default function Index() {
         if (changingLanguage) {
         setTimeout(() => {
             setChangingLanguage(false)
-          }, 300);
+          }, 500);
       }
         function handleResize() {
           const screenWidth = window.innerWidth;
           if (screenWidth < 1300) {
             setIsPhoneType(true);
+            
           } else {
             setIsPhoneType(false);
           }
@@ -91,7 +92,7 @@ export default function Index() {
             </div>
         </div>
           <AnimatedContainer>
-          <Image width={isPhoneType ? 350 : 400} height={isPhoneType ? 420 : 500} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
+          <Image width={isPhoneType ? 350 : 450} height={isPhoneType ? 420 : 500} src={'/assets/images/lucas.png'} alt={'profile'} />
           </AnimatedContainer>
       </div>
         <animated.div ref={ref}  style={fadeAbility} className={styles.habilities_container}>

@@ -9,17 +9,19 @@ const Skill = (props: ISkillProps) => {
     const [isPhoneType, setIsPhoneType] = React.useState(false as boolean);
 
     
-    const springProps = useSpring({
-      width: inView ? `${props.level}%` : '0%',
-      from: { width: '0%' },
-      config: { duration: 2000 }
-    });
-    const percentageStyle = useSpring({
-        textAlign: inView ? 'right' : 'left',
-        width: inView ? (isPhoneType ? '40vh' : '60vh') : '0vh',
-        from: { textAlign: 'left', width: '0vh' },
-        config: { duration: 2000 }
+        const springProps = useSpring({
+          width: inView ? `${props.level}%` : '0%',
+          from: { width: '0%' },
+          config: { duration: 2000 }
+        });
+
+        const percentageStyle = useSpring({
+          justifyContent: inView ? 'flex-end' : 'flex-start',
+          width: inView ? (isPhoneType ? '40vh' : '60vh') : '0vh',
+          from: { justifyContent: 'flex-start', width: '0vh' },
+          config: { duration: 2000 }
       });
+
       const titleStyle = useSpring({
           opacity: inView ? 1 : 0,
           from: { opacity: 0 },

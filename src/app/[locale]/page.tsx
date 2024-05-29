@@ -92,7 +92,7 @@ export default function Index() {
             </div>
         </div>
           <AnimatedContainer>
-          <Image width={isPhoneType ? 350 : 450} height={isPhoneType ? 420 : 500} src={'/assets/images/lucas.png'} alt={'profile'} />
+          <Image width={isPhoneType ? 300 : 450} height={isPhoneType ? 340 : 500} src={'/assets/images/lucas_perfil.png'} alt={'profile'} />
           </AnimatedContainer>
       </div>
         <animated.div ref={ref}  style={fadeAbility} className={styles.habilities_container}>

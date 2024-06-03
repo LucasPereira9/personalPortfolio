@@ -66,8 +66,8 @@
         width: 39vh;
     }
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 389px) {
     .title_container {
-        margin-top: 50vh;
+        margin-top: 60vh;
     }
 }

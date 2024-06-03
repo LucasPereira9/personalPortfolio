@@ -7,8 +7,10 @@ import Image from 'next/image';
 import { IHeaderProps } from '../header/header.structure';
 import React from 'react';
 import AnimatedBar from '../animatedBar';
+import { useTranslations } from 'next-intl';
 
 export default function ResponsiveHeader(props: IHeaderProps) {
+    const t = useTranslations('index');
     const [isPending, startTransition] = useTransition()
     const [isOpen, setIsOpen] = React.useState(false as boolean);
     const [scrolled, setScrolled] = React.useState(false as boolean);
@@ -27,7 +29,7 @@ export default function ResponsiveHeader(props: IHeaderProps) {
     ));
     const navigationOptions = navOptions.map((item, index) => (
         <div onClick={() => handleNavigationClick(item.id)} key={index}> 
-           <h3 className={styles.navigation_item}>{item.title}</h3>
+           <h3 className={styles.navigation_item}>{t(item.title)}</h3>
         </div>
     ));
    

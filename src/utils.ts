@@ -146,8 +146,16 @@ export const ServicesOptions = [
 ]
 
 export const WorkedCompanyes = [
+    
     {
         title: 'Front-End Developer',
+        date: '(06/2024 - )',
+        company: 'Emcash',
+        description: 'Manutenção e criação de fluxos',
+        icon: '/assets/images/work_icon.png'
+    },
+    {
+        title: 'Mobile Developer',
         date: '(10/2021 - 02/2024)',
         company: 'Qesh Payments',
         description: 'foco em suporte e desenvolvimento',

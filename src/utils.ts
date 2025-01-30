@@ -162,7 +162,14 @@ export const WorkedCompanyes = [
         icon: '/assets/images/work_icon.png'
     }
 ]
-export const StudyHistory = [
+export const StudyHistory = [    
+    {
+        title: 'Systems Analysis and Development',
+        date: '(2025 - )',
+        company: 'Universidade Estácio',
+        description: 'Curso voltado para o desenvolvimento de software',
+        icon: '/assets/images/study_icon.png'
+    },
     {
         title: 'Typescript Online Course',
         date: '(2022 - 2022)',
@@ -183,7 +190,7 @@ export const StudyHistory = [
         company: 'Alura',
         description: 'Treinamento focado na biblioteca',
         icon: '/assets/images/study_icon.png'
-    },
+    }
 ]
 export const ContactData = [
     {

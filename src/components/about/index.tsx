@@ -39,10 +39,10 @@ export default function About(props: IAboutProps) {
     ));
 
     const handleDownload = () => {
-        const downloadUrl = '/cvLucas.pdf';
+        const downloadUrl = '/cv_lucas.pdf';
         const link = document.createElement('a');
         link.href = downloadUrl;
-        link.setAttribute('download', 'cvLucas.pdf');
+        link.setAttribute('download', 'cv_lucas.pdf');
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -63,7 +63,7 @@ export default function About(props: IAboutProps) {
                 {!props.isPhone && 
                     <div className={styles.experience}>
                         <div className={styles.separator} />
-                        <h1 className={styles.experience_year}>4</h1>
+                        <h1 className={styles.experience_year}>5</h1>
                         <h1 className={styles.experience_text}>{t('Anos de Experiência')}</h1>
                     </div>
                 }
